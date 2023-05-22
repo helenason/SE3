@@ -33,5 +33,5 @@ private:
 public:
 	CancelApplication();
 	CancelApplicationUI* getCancelApplicationUI();
-	Company* cancelApplication(Person* person, Company** companies, string businessNum);
+	Company* cancelApplication(Person* person, Company** companies, char* businessNum);
 };

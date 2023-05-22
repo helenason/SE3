@@ -10,14 +10,18 @@
 */
 void CancelApplicationUI::selectApplication(FILE* inputFile, FILE* outputFile, Person* person, Company** companies)
 {
-	string businessNum;
+	char businessNum[32];
 
 	fscanf(inputFile, "%s", businessNum);
+	cout << "businessNum: " << businessNum;
+	fprintf(outputFile, "%s", businessNum);
+
+	
 
 
 	Company* company = cancelApplication->cancelApplication(person, companies, businessNum);
 
-	string companyName = company->getRecruitment()->getCompanyName();
+	const char* companyName = company->getRecruitment()->getCompanyName();
 	string task = company->getRecruitment()->getTask();
 	
 
@@ -65,13 +69,14 @@ CancelApplication::CancelApplication()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-Company* CancelApplication::cancelApplication(Person* person, Company** companies, string businessNum)
+Company* CancelApplication::cancelApplication(Person* person, Company** companies, char* businessNum)
 {
 	string task;
 	Company* company = NULL;
-	cout << companies[0]->getRecruitment();
 
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 100; i++)
+	{
+		cout << companies[i]->getBusinessNum() << " and " << businessNum;
 		if (companies[i]->getBusinessNum() == businessNum)
 		{
 			companies[i]->getRecruitment()->removePerson();
@@ -80,9 +85,10 @@ Company* CancelApplication::cancelApplication(Person* person, Company** companie
 			companies[i]->updateApplicantsNumByTask(task);
 			company = companies[i];
 			person->cancelApplication(businessNum, task);
-			return company;
+			break;
 		}
 	}
+	return company;
 }
 
 /*

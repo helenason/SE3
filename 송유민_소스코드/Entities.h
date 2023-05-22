@@ -48,15 +48,16 @@ public:
 class Recruitment
 {
 private:
-	string companyName;
+	const char* companyName;
 	string task;
 	int numPeople;
 	string applyDeadline;
 	string businessNum;
 	int applicantsNum = 0;
 public:
+	Recruitment();
 	void findRecruitmentEqualToApplication();
-	string getCompanyName();
+	const char* getCompanyName();
 	string getTask();
 	string getBusinessNum();
 	int getApplicantsNum();
@@ -75,6 +76,7 @@ private:
 	unordered_map<string, int> applyNumByTask;
 	ApplicationCollection* ownedApplicationCollection;
 public:
+	Person();
 	ApplicationCollection* listApplications();
 	void cancelApplication(string businessNum, string task);
 	virtual void showStatistics();
@@ -91,6 +93,7 @@ private:
 	Application* ownedApplication[100];
 	int count = 0;
 public:
+	ApplicationCollection();
 	void deleteApplication(string buisnessNum);
 };
 
@@ -107,6 +110,7 @@ private:
 	string applyDeadline;
 	string businessNum;
 public:
+	Application();
 	Application* getApplicationDetails();
 	void deleteApplication();
 	string getTask();

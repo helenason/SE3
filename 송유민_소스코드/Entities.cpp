@@ -20,7 +20,7 @@ void Member::showStatistics()
 Company::Company()
 {
 	this->recruitment = new Recruitment();
-	this->businessNum = "12345";
+	this->businessNum = "abc";
 }
 
 /*
@@ -79,13 +79,25 @@ void Recruitment::findRecruitmentEqualToApplication()
 
 }
 
+
+/*
+	함수 이름 : Recruitment::Recruitment()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+Recruitment::Recruitment()
+{
+	this->companyName = "companyName" ;
+}
+
 /*
 	함수 이름 : Recruitment::getCompanyName()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-string Recruitment::getCompanyName()
+const char* Recruitment::getCompanyName()
 {
 	return companyName;
 }
@@ -136,7 +148,16 @@ void Recruitment::removePerson()
 	}
 }
 
-
+/*
+	함수 이름 : Person::Person()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+Person::Person()
+{
+	this->ownedApplicationCollection = new ApplicationCollection();
+}
 
 /*
 	함수 이름 : Person::listApplications()
@@ -173,6 +194,16 @@ void Person::showStatistics()
 
 }
 
+/*
+	함수 이름 : ApplicationCollection::ApplicationCollection()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+ApplicationCollection::ApplicationCollection()
+{
+	ownedApplication[0] = new Application();
+}
 
 /*
 	함수 이름 : ApplicationCollection::deleteApplication()
@@ -191,6 +222,18 @@ void ApplicationCollection::deleteApplication(string businessNum)
 		}
 	}
 }
+
+/*
+	함수 이름 : Application::Application()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+Application::Application()
+{
+	this->businessNum = "abc";
+}
+
 /*
 	함수 이름 : Application::getApplicationDetails()
 	기능	  :
