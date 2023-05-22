@@ -12,14 +12,15 @@ void Member::showStatistics()
 }
 
 /*
-	함수 이름 : Company::getCompany()
+	함수 이름 : Company::Company()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-Company* Company::getCompany()
+Company::Company()
 {
-	return this;
+	this->recruitment = new Recruitment();
+	this->businessNum = "12345";
 }
 
 /*
@@ -34,27 +35,15 @@ string Company::getBusinessNum()
 }
 
 /*
-	함수 이름 : Company::listRecruitments()
+	함수 이름 : Company::getRecruitments()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-RecruitmentCollection* Company::listRecruitments()
+Recruitment* Company::getRecruitment()
 {
-	return ownedRecruitmentCollection;
+	return recruitment;
 }
-
-/*
-	함수 이름 : Company::printApplicantsNumByTask()
-	기능	  :
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-void Company::printApplicantsNumByTask()
-{
-	applicantsNumByTask.size();
-}
-
 
 /*
 	함수 이름 : Company::showStatistics()
@@ -68,6 +57,18 @@ void Company::showStatistics()
 }
 
 /*
+	함수 이름 : Company::updateApplicantsNumByTask()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+void Company::updateApplicantsNumByTask(string task)
+{
+	applicantsNumByTask[task] -= 1;
+}
+
+
+/*
 	함수 이름 : Recruitment::findRecruitmentEqualToApplication()
 	기능	  :
 	전달 인자 : 없음
@@ -79,14 +80,14 @@ void Recruitment::findRecruitmentEqualToApplication()
 }
 
 /*
-	함수 이름 : Recruitment::deletePerson()
+	함수 이름 : Recruitment::getCompanyName()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Recruitment::deletePerson()
+string Recruitment::getCompanyName()
 {
-
+	return companyName;
 }
 
 /*
@@ -101,6 +102,17 @@ string Recruitment::getTask()
 }
 
 /*
+	함수 이름 : Recruitment::getBusinessNum()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+string Recruitment::getBusinessNum()
+{
+	return businessNum;
+}
+
+/*
 	함수 이름 : Recruitment::getApplicantsNum()
 	기능	  :
 	전달 인자 : 없음
@@ -110,6 +122,21 @@ int Recruitment::getApplicantsNum()
 {
 	return applicantsNum;
 }
+
+/*
+	함수 이름 : Recruitment::removePerson()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+void Recruitment::removePerson()
+{
+	if (applicantsNum > 0) {
+		applicantsNum -= 1;
+	}
+}
+
+
 
 /*
 	함수 이름 : Person::listApplications()
@@ -128,31 +155,11 @@ ApplicationCollection* Person::listApplications()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::cancelApplication(string businessNum)
+void Person::cancelApplication(string businessNum, string task)
 {
+	applyNumByTask[task] -= 1;
+
 	ownedApplicationCollection->deleteApplication(businessNum);
-}
-
-/*
-	함수 이름 : Person::getPerson()
-	기능	  :
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-Person* Person::getPerson()
-{
-	return this;
-}
-
-/*
-	함수 이름 : Person::printApplyNumByTask()
-	기능	  :
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-void Person::printApplyNumByTask()
-{
-
 }
 
 /*

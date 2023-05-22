@@ -29,28 +29,17 @@ class Company :public Member
 {
 private:
 	unordered_map<string, int> applicantsNumByTask;
-	RecruitmentCollection* ownedRecruitmentCollection;
+	Recruitment* recruitment;
 	string businessNum;
 public:
-	Company* getCompany();
+	Company();
 	string getBusinessNum();
-	RecruitmentCollection* listRecruitments();
-	void printApplicantsNumByTask();
+	Recruitment* getRecruitment();
 	virtual void showStatistics();
+	void updateApplicantsNumByTask(string task);
 };
 
-/*
-	클래스 이름 :
-	기능	  :
-*/
-class RecruitmentCollection
-{
-private:
-	Recruitment* ownedRecruitment[100];
-	int count = 0;
-public:
-	
-};
+
 
 /*
 	클래스 이름 :
@@ -65,25 +54,16 @@ private:
 	string applyDeadline;
 	string businessNum;
 	int applicantsNum = 0;
-	PersonCollection* ownedPersonCollection;
 public:
 	void findRecruitmentEqualToApplication();
-	void deletePerson();
+	string getCompanyName();
 	string getTask();
+	string getBusinessNum();
 	int getApplicantsNum();
+	void removePerson();
 };
 
-/*
-	클래스 이름 :
-	기능	  :
-*/
-class PersonCollection
-{
-private:
-	Person* ownedPerson[100];
-	int count = 0;
-public:
-};
+
 
 /*
 	클래스 이름 :
@@ -96,9 +76,7 @@ private:
 	ApplicationCollection* ownedApplicationCollection;
 public:
 	ApplicationCollection* listApplications();
-	void cancelApplication(string businessNum);
-	Person* getPerson();
-	void printApplyNumByTask();
+	void cancelApplication(string businessNum, string task);
 	virtual void showStatistics();
 };
 
@@ -111,6 +89,7 @@ class ApplicationCollection
 {
 private:
 	Application* ownedApplication[100];
+	int count = 0;
 public:
 	void deleteApplication(string buisnessNum);
 };
