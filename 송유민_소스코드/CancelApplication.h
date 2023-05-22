@@ -1,4 +1,6 @@
 #include<iostream>
+#include <string>
+#include "Entities.h"
 
 using namespace std;
 
@@ -14,7 +16,7 @@ private:
 	CancelApplication* cancelApplication;
 public:
 	CancelApplicationUI(CancelApplication* cancelApplication);
-	void selectApplication();
+	void selectApplication(FILE* inputFile, FILE* outputFile, Person* person, Company** companies);
 	void showApplications();
 
 
@@ -29,5 +31,7 @@ class CancelApplication
 private:
 	CancelApplicationUI* cancelApplicationUI;
 public:
-	void cancelApplication();
+	CancelApplication();
+	CancelApplicationUI* getCancelApplicationUI();
+	void cancelApplication(Person* person, Company** companies, string businessNum);
 };

@@ -23,6 +23,17 @@ Company* Company::getCompany()
 }
 
 /*
+	함수 이름 : Company::getBusinessNum()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+string Company::getBusinessNum()
+{
+	return businessNum;
+}
+
+/*
 	함수 이름 : Company::listRecruitments()
 	기능	  :
 	전달 인자 : 없음
@@ -117,9 +128,9 @@ ApplicationCollection* Person::listApplications()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::cancelApplication()
+void Person::cancelApplication(string businessNum)
 {
-
+	ownedApplicationCollection->deleteApplication(businessNum);
 }
 
 /*
@@ -155,6 +166,24 @@ void Person::showStatistics()
 
 }
 
+
+/*
+	함수 이름 : ApplicationCollection::deleteApplication()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+void ApplicationCollection::deleteApplication(string businessNum)
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (ownedApplication[i]->getBusinessNum() == businessNum)
+		{
+			delete ownedApplication[i];
+			return;
+		}
+	}
+}
 /*
 	함수 이름 : Application::getApplicationDetails()
 	기능	  :
@@ -186,4 +215,15 @@ void Application::deleteApplication()
 string Application::getTask()
 {
 	return task;
+}
+
+/*
+	함수 이름 : Application::getBusinessNum()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+string Application::getBusinessNum()
+{
+	return businessNum;
 }

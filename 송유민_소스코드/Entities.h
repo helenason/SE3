@@ -30,8 +30,10 @@ class Company :public Member
 private:
 	unordered_map<string, int> applicantsNumByTask;
 	RecruitmentCollection* ownedRecruitmentCollection;
+	string businessNum;
 public:
 	Company* getCompany();
+	string getBusinessNum();
 	RecruitmentCollection* listRecruitments();
 	void printApplicantsNumByTask();
 	virtual void showStatistics();
@@ -45,6 +47,9 @@ class RecruitmentCollection
 {
 private:
 	Recruitment* ownedRecruitment[100];
+	int count = 0;
+public:
+	
 };
 
 /*
@@ -76,6 +81,7 @@ class PersonCollection
 {
 private:
 	Person* ownedPerson[100];
+	int count = 0;
 public:
 };
 
@@ -90,7 +96,7 @@ private:
 	ApplicationCollection* ownedApplicationCollection;
 public:
 	ApplicationCollection* listApplications();
-	void cancelApplication();
+	void cancelApplication(string businessNum);
 	Person* getPerson();
 	void printApplyNumByTask();
 	virtual void showStatistics();
@@ -106,6 +112,7 @@ class ApplicationCollection
 private:
 	Application* ownedApplication[100];
 public:
+	void deleteApplication(string buisnessNum);
 };
 
 /*
@@ -124,4 +131,5 @@ public:
 	Application* getApplicationDetails();
 	void deleteApplication();
 	string getTask();
+	string getBusinessNum();
 };
