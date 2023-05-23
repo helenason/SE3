@@ -1,25 +1,26 @@
 #include "Entities.h"
 
 /*
-	함수 이름 : Member::showStatistics()
+	함수 이름 : Member::getStatistics()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Member::showStatistics()
+void Member::getStatistics()
 {
 
 }
 
 /*
-	함수 이름 : Company::getCompany()
+	함수 이름 : Company::Company()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-Company* Company::getCompany()
+Company::Company()
 {
-	return this;
+	this->recruitment = new Recruitment();
+	this->businessNum = "12345";
 }
 
 /*
@@ -34,38 +35,38 @@ string Company::getBusinessNum()
 }
 
 /*
-	함수 이름 : Company::listRecruitments()
+	함수 이름 : Company::getRecruitments()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-RecruitmentCollection* Company::listRecruitments()
+Recruitment* Company::getRecruitment()
 {
-	return ownedRecruitmentCollection;
+	return recruitment;
 }
 
 /*
-	함수 이름 : Company::printApplicantsNumByTask()
+	함수 이름 : Company::getStatistics()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Company::printApplicantsNumByTask()
+void Company::getStatistics()
 {
-	applicantsNumByTask.size();
-}
 
+}
 
 /*
-	함수 이름 : Company::showStatistics()
+	함수 이름 : Company::subtractApplicantsNumByTask()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Company::showStatistics()
+void Company::subtractApplicantsNumByTask(string task)
 {
-
+	applicantsNumByTask[task] -= 1;
 }
+
 
 /*
 	함수 이름 : Recruitment::findRecruitmentEqualToApplication()
@@ -78,15 +79,27 @@ void Recruitment::findRecruitmentEqualToApplication()
 
 }
 
+
 /*
-	함수 이름 : Recruitment::deletePerson()
+	함수 이름 : Recruitment::Recruitment()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Recruitment::deletePerson()
+Recruitment::Recruitment()
 {
+	this->companyName = "companyName" ;
+}
 
+/*
+	함수 이름 : Recruitment::getCompanyName()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+const char* Recruitment::getCompanyName()
+{
+	return companyName;
 }
 
 /*
@@ -101,6 +114,17 @@ string Recruitment::getTask()
 }
 
 /*
+	함수 이름 : Recruitment::getBusinessNum()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+string Recruitment::getBusinessNum()
+{
+	return businessNum;
+}
+
+/*
 	함수 이름 : Recruitment::getApplicantsNum()
 	기능	  :
 	전달 인자 : 없음
@@ -109,6 +133,30 @@ string Recruitment::getTask()
 int Recruitment::getApplicantsNum()
 {
 	return applicantsNum;
+}
+
+/*
+	함수 이름 : Recruitment::removePerson()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+void Recruitment::removePerson()
+{
+	if (applicantsNum > 0) {
+		applicantsNum -= 1;
+	}
+}
+
+/*
+	함수 이름 : Person::Person()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+Person::Person()
+{
+	this->ownedApplicationCollection = new ApplicationCollection();
 }
 
 /*
@@ -128,44 +176,34 @@ ApplicationCollection* Person::listApplications()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::cancelApplication(string businessNum)
+void Person::cancelApplication(string businessNum, string task)
 {
+	applyNumByTask[task] -= 1;
+
 	ownedApplicationCollection->deleteApplication(businessNum);
 }
 
 /*
-	함수 이름 : Person::getPerson()
+	함수 이름 : Person::getStatistics()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-Person* Person::getPerson()
-{
-	return this;
-}
-
-/*
-	함수 이름 : Person::printApplyNumByTask()
-	기능	  :
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-void Person::printApplyNumByTask()
+void Person::getStatistics()
 {
 
 }
 
 /*
-	함수 이름 : Person::showStatistics()
+	함수 이름 : ApplicationCollection::ApplicationCollection()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::showStatistics()
+ApplicationCollection::ApplicationCollection()
 {
-
+	ownedApplication[0] = new Application();
 }
-
 
 /*
 	함수 이름 : ApplicationCollection::deleteApplication()
@@ -184,6 +222,18 @@ void ApplicationCollection::deleteApplication(string businessNum)
 		}
 	}
 }
+
+/*
+	함수 이름 : Application::Application()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+Application::Application()
+{
+	this->businessNum = "12345";
+}
+
 /*
 	함수 이름 : Application::getApplicationDetails()
 	기능	  :
@@ -195,16 +245,6 @@ Application* Application::getApplicationDetails()
 	return this;
 }
 
-/*
-	함수 이름 : Application::deleteApplication()
-	기능	  :
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-void Application::deleteApplication()
-{
-
-}
 
 /*
 	함수 이름 : Application::getTask()

@@ -10,17 +10,18 @@
 */
 void CancelApplicationUI::selectApplication(FILE* inputFile, FILE* outputFile, Person* person, Company** companies)
 {
-	string businessNum;
+	char businessNum[32];
 
 	fscanf(inputFile, "%s", businessNum);
 
+	Company* company = cancelApplication->cancelApplication(person, companies, businessNum);
 
-	cancelApplication->cancelApplication(person, companies, businessNum);
+	const char* companyName = company->getRecruitment()->getCompanyName();
+	string task = company->getRecruitment()->getTask();
+	
 
-
-
-
-	fprintf(outputFile, "%s\n", businessNum);
+	fprintf(outputFile, "4.4 지원 취소\n");
+	fprintf(outputFile, "> %s %s %s\n", companyName, businessNum, task);
 }
 
 /*
@@ -63,16 +64,26 @@ CancelApplication::CancelApplication()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void CancelApplication::cancelApplication(Person* person, Company** companies, string businessNum)
+Company* CancelApplication::cancelApplication(Person* person, Company** companies, char* businessNum)
 {
-	person->cancelApplication(businessNum);
+	string task;
+	Company* company = NULL;
 
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 100; i++)
+	{
+		cout << companies[i]->getBusinessNum() << " and " << businessNum;
 		if (companies[i]->getBusinessNum() == businessNum)
 		{
-			companies[i]->listRecruitments();
+			companies[i]->getRecruitment()->removePerson();
+			task = companies[i]->getRecruitment()->getTask();
+
+			companies[i]->subtractApplicantsNumByTask(task);
+			company = companies[i];
+			person->cancelApplication(businessNum, task);
+			break;
 		}
 	}
+	return company;
 }
 
 /*

@@ -18,7 +18,9 @@ void program_exit();
 int main()
 {
 	Person* person = new Person();
-	Company** companies = new Company * [100];
+	Company* company = new Company();
+	Company* companies[100];
+	companies[0] = company;
 
 
 	FILE* inputFile = fopen(INPUT_FILE_NAME, "r+");

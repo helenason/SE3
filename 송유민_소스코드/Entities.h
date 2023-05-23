@@ -21,7 +21,7 @@ class Member
 private:
 
 public:
-	virtual void showStatistics();
+	virtual void getStatistics();
 
 };
 
@@ -29,28 +29,17 @@ class Company :public Member
 {
 private:
 	unordered_map<string, int> applicantsNumByTask;
-	RecruitmentCollection* ownedRecruitmentCollection;
+	Recruitment* recruitment;
 	string businessNum;
 public:
-	Company* getCompany();
+	Company();
 	string getBusinessNum();
-	RecruitmentCollection* listRecruitments();
-	void printApplicantsNumByTask();
-	virtual void showStatistics();
+	Recruitment* getRecruitment();
+	void subtractApplicantsNumByTask(string task);
+	virtual void getStatistics();
 };
 
-/*
-	클래스 이름 :
-	기능	  :
-*/
-class RecruitmentCollection
-{
-private:
-	Recruitment* ownedRecruitment[100];
-	int count = 0;
-public:
-	
-};
+
 
 /*
 	클래스 이름 :
@@ -59,31 +48,23 @@ public:
 class Recruitment
 {
 private:
-	string companyName;
+	const char* companyName;
 	string task;
 	int numPeople;
 	string applyDeadline;
 	string businessNum;
 	int applicantsNum = 0;
-	PersonCollection* ownedPersonCollection;
 public:
+	Recruitment();
 	void findRecruitmentEqualToApplication();
-	void deletePerson();
+	const char* getCompanyName();
 	string getTask();
+	string getBusinessNum();
 	int getApplicantsNum();
+	void removePerson();
 };
 
-/*
-	클래스 이름 :
-	기능	  :
-*/
-class PersonCollection
-{
-private:
-	Person* ownedPerson[100];
-	int count = 0;
-public:
-};
+
 
 /*
 	클래스 이름 :
@@ -95,11 +76,10 @@ private:
 	unordered_map<string, int> applyNumByTask;
 	ApplicationCollection* ownedApplicationCollection;
 public:
+	Person();
 	ApplicationCollection* listApplications();
-	void cancelApplication(string businessNum);
-	Person* getPerson();
-	void printApplyNumByTask();
-	virtual void showStatistics();
+	void cancelApplication(string businessNum, string task);
+	virtual void getStatistics();
 };
 
 
@@ -111,7 +91,9 @@ class ApplicationCollection
 {
 private:
 	Application* ownedApplication[100];
+	int count = 0;
 public:
+	ApplicationCollection();
 	void deleteApplication(string buisnessNum);
 };
 
@@ -128,8 +110,8 @@ private:
 	string applyDeadline;
 	string businessNum;
 public:
+	Application();
 	Application* getApplicationDetails();
-	void deleteApplication();
 	string getTask();
 	string getBusinessNum();
 };
