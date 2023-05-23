@@ -21,7 +21,7 @@ class Member
 private:
 
 public:
-	virtual void showStatistics();
+	virtual void getStatistics();
 
 };
 
@@ -35,8 +35,8 @@ public:
 	Company();
 	string getBusinessNum();
 	Recruitment* getRecruitment();
-	virtual void showStatistics();
-	void updateApplicantsNumByTask(string task);
+	void subtractApplicantsNumByTask(string task);
+	virtual void getStatistics();
 };
 
 
@@ -79,7 +79,7 @@ public:
 	Person();
 	ApplicationCollection* listApplications();
 	void cancelApplication(string businessNum, string task);
-	virtual void showStatistics();
+	virtual void getStatistics();
 };
 
 
@@ -112,7 +112,6 @@ private:
 public:
 	Application();
 	Application* getApplicationDetails();
-	void deleteApplication();
 	string getTask();
 	string getBusinessNum();
 };
