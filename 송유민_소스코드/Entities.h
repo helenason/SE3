@@ -21,7 +21,8 @@ class Member
 private:
 
 public:
-	virtual void getStatistics();
+	virtual unordered_map<string, int> getStatistics()=0;
+	virtual void cancelApplication(char* businessNum, char* task);
 
 };
 
@@ -30,13 +31,13 @@ class Company :public Member
 private:
 	unordered_map<string, int> applicantsNumByTask;
 	Recruitment* recruitment;
-	string businessNum;
+	char businessNum[32];
 public:
 	Company();
-	string getBusinessNum();
+	char* getBusinessNum();
 	Recruitment* getRecruitment();
-	void subtractApplicantsNumByTask(string task);
-	virtual void getStatistics();
+	void subtractApplicantsNumByTask(char* task);
+	virtual unordered_map<string, int> getStatistics();
 };
 
 
@@ -48,18 +49,18 @@ public:
 class Recruitment
 {
 private:
-	const char* companyName;
-	string task;
+	char companyName[32];
+	char task[32];
 	int numPeople;
-	string applyDeadline;
-	string businessNum;
+	char applyDeadline[32];
+	char businessNum[32];
 	int applicantsNum = 0;
 public:
 	Recruitment();
 	void findRecruitmentEqualToApplication();
-	const char* getCompanyName();
-	string getTask();
-	string getBusinessNum();
+	char* getCompanyName();
+	char* getTask();
+	char* getBusinessNum();
 	int getApplicantsNum();
 	void removePerson();
 };
@@ -78,8 +79,8 @@ private:
 public:
 	Person();
 	ApplicationCollection* listApplications();
-	void cancelApplication(string businessNum, string task);
-	virtual void getStatistics();
+	virtual void cancelApplication(char* businessNum, char* task);
+	virtual unordered_map<string, int> getStatistics();
 };
 
 
@@ -94,7 +95,7 @@ private:
 	int count = 0;
 public:
 	ApplicationCollection();
-	void deleteApplication(string buisnessNum);
+	void deleteApplication(char* buisnessNum);
 };
 
 /*
@@ -104,14 +105,14 @@ public:
 class Application
 {
 private:
-	string companyName;
-	string task;
+	char companyName[32];
+	char task[32];
 	int numPeople;
-	string applyDeadline;
-	string businessNum;
+	char applyDeadline[32];
+	char businessNum[32];
 public:
 	Application();
 	Application* getApplicationDetails();
-	string getTask();
-	string getBusinessNum();
+	char* getTask();
+	char* getBusinessNum();
 };

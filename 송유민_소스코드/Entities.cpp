@@ -1,12 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <cstring>
+#include <string>
 #include "Entities.h"
 
+
+
 /*
-	함수 이름 : Member::getStatistics()
+	함수 이름 : Member::cancelApplication()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Member::getStatistics()
+void Member::cancelApplication(char* businessNum, char* task)
 {
 
 }
@@ -20,7 +25,7 @@ void Member::getStatistics()
 Company::Company()
 {
 	this->recruitment = new Recruitment();
-	this->businessNum = "12345";
+	strcpy(this->businessNum, "12345");
 }
 
 /*
@@ -29,7 +34,7 @@ Company::Company()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-string Company::getBusinessNum()
+char* Company::getBusinessNum()
 {
 	return businessNum;
 }
@@ -51,9 +56,9 @@ Recruitment* Company::getRecruitment()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Company::getStatistics()
+unordered_map<string, int> Company::getStatistics()
 {
-
+	return applicantsNumByTask;
 }
 
 /*
@@ -62,9 +67,10 @@ void Company::getStatistics()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Company::subtractApplicantsNumByTask(string task)
+void Company::subtractApplicantsNumByTask(char* task)
 {
-	applicantsNumByTask[task] -= 1;
+	string stringTask(task);
+	applicantsNumByTask[stringTask] -= 1;
 }
 
 
@@ -88,7 +94,8 @@ void Recruitment::findRecruitmentEqualToApplication()
 */
 Recruitment::Recruitment()
 {
-	this->companyName = "companyName" ;
+	 strcpy(this->companyName, "companyName");
+	 strcpy(this->task, "task");
 }
 
 /*
@@ -97,7 +104,7 @@ Recruitment::Recruitment()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-const char* Recruitment::getCompanyName()
+char* Recruitment::getCompanyName()
 {
 	return companyName;
 }
@@ -108,7 +115,7 @@ const char* Recruitment::getCompanyName()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-string Recruitment::getTask()
+char* Recruitment::getTask()
 {
 	return task;
 }
@@ -119,7 +126,7 @@ string Recruitment::getTask()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-string Recruitment::getBusinessNum()
+char* Recruitment::getBusinessNum()
 {
 	return businessNum;
 }
@@ -145,6 +152,7 @@ void Recruitment::removePerson()
 {
 	if (applicantsNum > 0) {
 		applicantsNum -= 1;
+		cout << "applicantsNum: " << applicantsNum;
 	}
 }
 
@@ -157,6 +165,16 @@ void Recruitment::removePerson()
 Person::Person()
 {
 	this->ownedApplicationCollection = new ApplicationCollection();
+	char task[32] = "task";
+	char zero[32] = "zero";
+	const char* charPointer = "charPointer";
+
+	//string stringTask(task);
+	//string stringZero(zero);
+
+	this->applyNumByTask[zero] = 0;
+	this->applyNumByTask[task] = 1;
+	this->applyNumByTask[charPointer]=8;
 }
 
 /*
@@ -176,9 +194,11 @@ ApplicationCollection* Person::listApplications()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::cancelApplication(string businessNum, string task)
+void Person::cancelApplication(char* businessNum, char* task)
 {
 	applyNumByTask[task] -= 1;
+	cout << endl << applyNumByTask[task]<<endl;
+	cout << endl << "Person::cancelApplication의 task: " << task << endl;
 
 	ownedApplicationCollection->deleteApplication(businessNum);
 }
@@ -189,9 +209,9 @@ void Person::cancelApplication(string businessNum, string task)
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::getStatistics()
+unordered_map<string, int> Person::getStatistics()
 {
-
+	return applyNumByTask;
 }
 
 /*
@@ -211,16 +231,29 @@ ApplicationCollection::ApplicationCollection()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void ApplicationCollection::deleteApplication(string businessNum)
+void ApplicationCollection::deleteApplication(char* businessNum)
 {
-	for (int i = 0; i < 100; i++)
+	cout << "before count: " << count << endl;
+	for (int i = 0; i < this->count; i++)
 	{
-		if (ownedApplication[i]->getBusinessNum() == businessNum)
+		if (!strcmp(ownedApplication[i]->getBusinessNum(), businessNum))
 		{
-			delete ownedApplication[i];
-			return;
+			for (int j = 0; j < this->count - i - 1; j++)
+			{
+				cout << "before cancel: " << this->ownedApplication[j]->getBusinessNum() << endl;
+				this->ownedApplication[j + i] = this->ownedApplication[j + i + 1];
+				cout << "before cancel: " << this->ownedApplication[j]->getBusinessNum() << endl;
+			}
+			
+				break;
 		}
 	}
+	if (count > 0)
+	{
+		this->count--;
+	}
+	
+	cout << "after count: " << count << endl;
 }
 
 /*
@@ -231,7 +264,7 @@ void ApplicationCollection::deleteApplication(string businessNum)
 */
 Application::Application()
 {
-	this->businessNum = "12345";
+	strcpy(this->businessNum,"12345");
 }
 
 /*
@@ -252,7 +285,7 @@ Application* Application::getApplicationDetails()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-string Application::getTask()
+char* Application::getTask()
 {
 	return task;
 }
@@ -263,7 +296,7 @@ string Application::getTask()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-string Application::getBusinessNum()
+char* Application::getBusinessNum()
 {
 	return businessNum;
 }

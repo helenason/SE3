@@ -6,7 +6,6 @@
 
 
 // 상수 선언
-#define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
@@ -18,6 +17,7 @@ void program_exit();
 int main()
 {
 	Person* person = new Person();
+	Member* loginMember = person;
 	Company* company = new Company();
 	Company* companies[100];
 	companies[0] = company;
@@ -26,8 +26,13 @@ int main()
 	FILE* inputFile = fopen(INPUT_FILE_NAME, "r+");
 	FILE* outputFile = fopen(OUTPUT_FILE_NAME, "w+");
 
+	//CancelApplication의 controll, boundary 클래스 생성
 	CancelApplication* cancelApplication = new CancelApplication();
 	CancelApplicationUI* cancelApplicationUI = cancelApplication->getCancelApplicationUI();
+
+	//ShowStatistics의 controll, boundary 클래스 생성
+	ShowStatistics* showStatistics = new ShowStatistics();
+	ShowStatisticsUI* showStatisticsUI = showStatistics->getShowStatisticsUI();
 
 	// 메뉴 파싱을 위한 level 구분을 위한 변수
 	int menu_level_1 = 0, menu_level_2 = 0;
@@ -53,7 +58,7 @@ int main()
 			}
 			case 4: // "4.4. 지원 취소" 메뉴 부분
 			{
-				cancelApplicationUI->selectApplication(inputFile, outputFile, person, companies);
+				cancelApplicationUI->selectApplication(inputFile, outputFile, loginMember, companies);
 				break;
 			}
 			}
@@ -62,9 +67,9 @@ int main()
 		{
 			switch (menu_level_2)
 			{
-			case 1: // "4.3. 지원 정보 통계" 메뉴 부분
+			case 1: // "5.1. 지원 정보 통계" 메뉴 부분
 			{
-
+				showStatisticsUI->printStatistics(inputFile, outputFile, loginMember);
 				break;
 			}
 			}

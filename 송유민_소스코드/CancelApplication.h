@@ -1,5 +1,4 @@
 #include<iostream>
-#include <string>
 #include "Entities.h"
 
 using namespace std;
@@ -16,10 +15,7 @@ private:
 	CancelApplication* cancelApplication;
 public:
 	CancelApplicationUI(CancelApplication* cancelApplication);
-	void selectApplication(FILE* inputFile, FILE* outputFile, Person* person, Company** companies);
-	void showApplications();
-
-
+	void selectApplication(FILE* inputFile, FILE* outputFile, Member* member, Company** companies);
 };
 
 /*
@@ -33,5 +29,5 @@ private:
 public:
 	CancelApplication();
 	CancelApplicationUI* getCancelApplicationUI();
-	Company* cancelApplication(Person* person, Company** companies, char* businessNum);
+	Company* cancelApplication(Member* member, Company** companies, char* businessNum);
 };

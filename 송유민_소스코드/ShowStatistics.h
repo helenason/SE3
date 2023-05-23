@@ -1,7 +1,9 @@
 #include<iostream>
-#include <string>
-
+#include<unordered_map>
 using namespace std;
+
+class ShowStatistics;
+class Member;
 
 /*
 	클래스 이름 :
@@ -9,8 +11,11 @@ using namespace std;
 */
 class ShowStatisticsUI
 {
+private:
+	ShowStatistics* showStatistics;
 public:
-	void showStatistics();
+	ShowStatisticsUI(ShowStatistics* showStatistics);
+	void printStatistics(FILE* inputFile, FILE* outputFile, Member* member);
 };
 
 /*
@@ -19,6 +24,10 @@ public:
 */
 class ShowStatistics
 {
+private:
+	ShowStatisticsUI* showStatisticsUI;
 public:
-	void showStatistics();
+	ShowStatistics();
+	ShowStatisticsUI* getShowStatisticsUI();
+	unordered_map<string, int> printStatistics(Member* member);
 };
