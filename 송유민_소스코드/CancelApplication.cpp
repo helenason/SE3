@@ -13,11 +13,6 @@ void CancelApplicationUI::selectApplication(FILE* inputFile, FILE* outputFile, P
 	char businessNum[32];
 
 	fscanf(inputFile, "%s", businessNum);
-	cout << "businessNum: " << businessNum;
-	fprintf(outputFile, "%s", businessNum);
-
-	
-
 
 	Company* company = cancelApplication->cancelApplication(person, companies, businessNum);
 
@@ -82,7 +77,7 @@ Company* CancelApplication::cancelApplication(Person* person, Company** companie
 			companies[i]->getRecruitment()->removePerson();
 			task = companies[i]->getRecruitment()->getTask();
 
-			companies[i]->updateApplicantsNumByTask(task);
+			companies[i]->subtractApplicantsNumByTask(task);
 			company = companies[i];
 			person->cancelApplication(businessNum, task);
 			break;

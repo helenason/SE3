@@ -1,12 +1,12 @@
 #include "Entities.h"
 
 /*
-	함수 이름 : Member::showStatistics()
+	함수 이름 : Member::getStatistics()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Member::showStatistics()
+void Member::getStatistics()
 {
 
 }
@@ -20,7 +20,7 @@ void Member::showStatistics()
 Company::Company()
 {
 	this->recruitment = new Recruitment();
-	this->businessNum = "abc";
+	this->businessNum = "12345";
 }
 
 /*
@@ -46,23 +46,23 @@ Recruitment* Company::getRecruitment()
 }
 
 /*
-	함수 이름 : Company::showStatistics()
+	함수 이름 : Company::getStatistics()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Company::showStatistics()
+void Company::getStatistics()
 {
 
 }
 
 /*
-	함수 이름 : Company::updateApplicantsNumByTask()
+	함수 이름 : Company::subtractApplicantsNumByTask()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Company::updateApplicantsNumByTask(string task)
+void Company::subtractApplicantsNumByTask(string task)
 {
 	applicantsNumByTask[task] -= 1;
 }
@@ -184,12 +184,12 @@ void Person::cancelApplication(string businessNum, string task)
 }
 
 /*
-	함수 이름 : Person::showStatistics()
+	함수 이름 : Person::getStatistics()
 	기능	  :
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void Person::showStatistics()
+void Person::getStatistics()
 {
 
 }
@@ -231,7 +231,7 @@ void ApplicationCollection::deleteApplication(string businessNum)
 */
 Application::Application()
 {
-	this->businessNum = "abc";
+	this->businessNum = "12345";
 }
 
 /*
@@ -245,16 +245,6 @@ Application* Application::getApplicationDetails()
 	return this;
 }
 
-/*
-	함수 이름 : Application::deleteApplication()
-	기능	  :
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-void Application::deleteApplication()
-{
-
-}
 
 /*
 	함수 이름 : Application::getTask()
