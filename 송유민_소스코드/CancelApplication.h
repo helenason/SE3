@@ -1,22 +1,14 @@
+#pragma once
 #include<iostream>
-#include "Entities.h"
+#include<string>
+#include"CancelApplicationUI.h"
+#include "Member.h"
+
 
 using namespace std;
 
-class CancelApplication;
-
-/*
-	클래스 이름 : CancelApplicationUI
-	기능	  :
-*/
-class CancelApplicationUI
-{
-private:
-	CancelApplication* cancelApplication;
-public:
-	CancelApplicationUI(CancelApplication* cancelApplication);
-	void selectApplication(FILE* inputFile, FILE* outputFile, Member* member, Company** companies);
-};
+class Company;
+class CancelApplicationUI;
 
 /*
 	클래스 이름 :
@@ -29,5 +21,5 @@ private:
 public:
 	CancelApplication();
 	CancelApplicationUI* getCancelApplicationUI();
-	Company* cancelApplication(Member* member, Company** companies, char* businessNum);
+	Company* cancelApplication(Member* member, Company** companies, int companiesCount, string businessNum);
 };

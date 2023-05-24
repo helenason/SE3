@@ -1,15 +1,7 @@
+#pragma once
+#include<string>
 #include "ShowApplications.h"
 
-/*
-	함수 이름 : ShowApplicationsUI::showAllApplications()
-	기능	  : 
-	전달 인자 : 없음
-	반환값    : 없음
-*/
-void ShowApplicationsUI::showAllApplications()
-{
-	
-}
 
 /*
 	함수 이름 : ShowApplications::showApplications()
@@ -17,7 +9,30 @@ void ShowApplicationsUI::showAllApplications()
 	전달 인자 : 없음
 	반환값    : 없음
 */
-void ShowApplications::showApplications()
+ApplicationCollection* ShowApplications::showApplications(Member* member)
 {
+	return member->getApplicationCollection();
+	
+}
 
+/*
+	함수 이름 : ShowApplications::ShowApplications()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+ShowApplications::ShowApplications()
+{
+	showApplicationsUI = new ShowApplicationsUI(this);
+}
+
+/*
+	함수 이름 : ShowApplications::getShowApplicationsUI()
+	기능	  :
+	전달 인자 : 없음
+	반환값    : 없음
+*/
+ShowApplicationsUI* ShowApplications::getShowApplicationsUI()
+{
+	return showApplicationsUI;
 }

@@ -1,24 +1,26 @@
 #pragma once
-
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-class Recruitment {
+/*
+	클래스 이름 :
+	기능	  :
+*/
+class Application
+{
 private:
 	string companyName;
-	string businessNum;
 	string task;
 	int numPeople;
 	string applyDeadline;
-
+	string businessNum;
 public:
-	Recruitment(string name, string num, string task, int nPeople, string deadline);
+	Application();
 	string getCompanyName();
-	string getBusinessNum();
 	string getTask();
 	int getNumPeople();
 	string getApplyDeadline();
-	Recruitment getRecruitment();
-	void addPerson();
+	string getBusinessNum();
 };

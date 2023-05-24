@@ -13,21 +13,3 @@ string Member::getId() {
 string Member::getPassword() {
 	return this->password;
 }
-void Member::createNewMember() {
-
-}
-void Member::deleteMember() {
-
-}
-Member Member::getMember() {
-
-}
-void Member::activateMember() {
-
-}
-void Member::deactivateMember() {
-
-}
-void Member::getMemberClassifier() {
-
-}

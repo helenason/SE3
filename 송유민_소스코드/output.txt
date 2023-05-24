@@ -1,0 +1,11 @@
+4.3 지원 정보 조회
+
+4.4 지원 취소
+> companyName 12345 task
+
+5.1 지원 정보 통계
+> zero 0
+> task 0
+> charPointer 8
+
+6.1. 종료

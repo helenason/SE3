@@ -10,8 +10,8 @@ using namespace std;
 string Application::getCompanyName() {
 	return this->companyName;
 }
-int Application::getCompanyNum(){
-	return this->companyNum;
+string Application::getBusinessNum(){
+	return this->businessNum;
 }
 string Application::getTask() {
 	return this->task;

@@ -2,31 +2,37 @@
 #include <string>
 #include "Person.h"
 #include "Apply.h"
+#include "Recruitment.h"
 #include "Application.h"
-#include "RecruitmentCollection.h"
 using namespace std;
 
-Application Apply::apply(int companyNum) {
-	RecruitmentCollection recruitmentCollection;
+Application* Apply::apply(string businessNum, Company** companies, int companiesCount, Member* loginMember) {
 	
-	// companyNum을 가진 recruitment 찾고
-	Recruitment recruitment = recruitmentCollection.findRecruitment(companyNum)[0];
+	Recruitment* foundRecruitment;
+	// businessNum을 가진 company 찾기
+	for (int i = 0; i < companiesCount; i++) {
+		if (businessNum == companies[i]->getBusinessNum()) {
+			foundRecruitment = companies[i]->getRecruitment();
+		}
+	}
 
-	// 해당 recruitment의 인원수 +1
-	recruitment.addPerson();
+	// 해당 recruitment의 인원수 + 1
+	foundRecruitment->addPerson();
 
-	// 해당 recruitment의 정보 가져오기
-	string companyName = recruitment.getCompanyName();
-	string task = recruitment.getTask();
-	int numPeople = recruitment.getNumPeople();
-	string applyDeadline = recruitment.getApplyDeadline();
+	// recruitment 정보 가져오기
+	string companyName = foundRecruitment->getCompanyName();
+	string task = foundRecruitment->getTask();
+	int numPeople = foundRecruitment->getNumPeople();
+	string applyDeadline = foundRecruitment->getApplyDeadline();
 
 	// recruitment 정보들로 application 클래스 생성 = 지원
-	Application* application = new Application(companyName, companyNum, task, numPeople, applyDeadline);
+	Application* newApp = new Application(companyName, businessNum, task, numPeople, applyDeadline);
 
 	// 로그인된 계정의 지원 리스트에 추가
-	Person loggedPerson;
-	loggedPerson.addNewApplication(application);
+	// loginMember.addNewApplication(newApp); // loginMember가 일반인지 회사인지 아는 방법? addNewApplication이 person의 함수인데 어떻게 호출?
 
-	return application[0];
+	Person* loginPerson = new Person("id", "pw", "name", "num"); // 수정 전
+	loginPerson->addNewApplication(newApp);
+
+	return newApp;
 }
