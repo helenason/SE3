@@ -3,18 +3,24 @@
 #include "Company.h"
 using namespace std;
 
+Company::Company(string companyName, string businessNum, string id, string password) :Member(id, password) {
+	this->id = id;
+	this->password = password;
+	this->companyName = companyName;
+	this->businessNum = businessNum;
+}
 string Company::getCompanyName() {
 	return this->companyName;
 }
 
-int Company::getCompanyNum() {
-	return this->companyNum;
+string Company::getBusinessNum() {
+	return this->businessNum;
 }
 
 Company Company::getCompany(string companyName) {
-	return Company(companyName, this->companyNum, this->getId(), this->getPassword());
+	return Company(companyName, this->businessNum, this->id, this->password);
 }
 
-RecruitmentCollection Company::listRecruitments() {
-	return this->recruitmentCollection;
+Recruitment* Company::getRecruitment() {
+	return this->ownedRecruitment;
 }

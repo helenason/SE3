@@ -5,14 +5,11 @@
 
 #include <iostream>
 #include <string>
-#include "CompanyCollection.h"
-#include "RecruitmentCollection.h"
 #include "Recruitment.h"
 #include "Company.h"
 using namespace std;
 
-class Search { // control
+class Search {
 public:
-	Recruitment searchRecruitmentByCompanyName(string companyName);
-	// 1개만 검색되므로 s 삭제
+	Recruitment* searchRecruitmentByCompanyName(string companyName, Company** companies, int companiesCount);
 };

@@ -1,22 +1,23 @@
 #include <iostream>
 #include <string>
-#include "RecruitmentCollection.h"
-#include "Recruitment.h"
 #include "Member.h"
+#include "Recruitment.h"
 using namespace std;
 
 class Company : public Member {
 private :
+	string id;
+	string password;
 	string companyName;
-	int companyNum;
-	RecruitmentCollection recruitmentCollection;
+	string businessNum;
+	Recruitment* ownedRecruitment;
 public :
-	Company(string companyName, int companyNum, string id, string password) :Member(id, password) {
+	Company(string companyName, string businessNum, string id, string password) :Member(id, password) {
 		this->companyName = companyName;
-		this->companyNum = companyNum;
+		this->businessNum = businessNum;
 	}
 	string getCompanyName();
-	int getCompanyNum();
+	string getBusinessNum();
 	Company getCompany(string companyName);
-	RecruitmentCollection listRecruitments();
+	Recruitment* getRecruitment();
 };

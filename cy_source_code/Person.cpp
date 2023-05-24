@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Person.h"
+#include "ApplicationCollection.h"
 using namespace std;
 
 string Person::getPersonName() {
@@ -9,18 +10,6 @@ string Person::getPersonName() {
 string Person::getRegNum() {
 	return this->regNum;
 }
-void Person::listApplications() {
-
-}
-void Person::cancelApplication() {
-
-}
-void Person::deleteApplication() {
-
-}
-Person Person::getPerson() {
-
-}
 void Person::addNewApplication(Application* application) {
-	this->applicationCollection.addApplication(application);
+	this->ownedApplicationCollection->addApplication(application);
 }

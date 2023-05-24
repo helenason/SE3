@@ -3,19 +3,8 @@
 #include "ApplicationCollection.h"
 using namespace std;
 
-Application ApplicationCollection::findFirst() {
-	
-}
-Application ApplicationCollection::getNext() {
-
-}
-void ApplicationCollection::addApplication(Application* application) {
-	int length = sizeof(ownedApplication) / sizeof(*ownedApplication);
+void ApplicationCollection::addApplication(Application* application) { // collection¿¡ application Ãß°¡
+	int length = this->count;
 	this->ownedApplication[length] = application;
-}
-void ApplicationCollection::removeApplication() {
-
-}
-Application* ApplicationCollection::findApplication(string companyName) {
-
+	(this->count)++;
 }

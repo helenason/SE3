@@ -7,12 +7,11 @@ using namespace std;
 
 class ApplicationCollection {
 private :
-	Person owner; // ?
 	Application* ownedApplication[100];
+	int count = 0; // collection 하위 app의 수
 public :
-	Application findFirst();
-	Application getNext();
+	//Application findFirst();
+	//Application getNext();
 	void addApplication(Application* application);
-	void removeApplication();
-	Application* findApplication(string companyName);
+	//Application* findApplication(string companyName);
 };

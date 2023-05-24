@@ -3,11 +3,18 @@
 #include "Recruitment.h"
 using namespace std;
 
+Recruitment::Recruitment(string name, string num, string task, int nPeople, string deadline) {
+	this->companyName = name;
+	this->businessNum = num;
+	this->task = task;
+	this->numPeople = nPeople;
+	this->applyDeadline = deadline;
+}
 string Recruitment::getCompanyName() {
 	return this->companyName;
 }
-int Recruitment::getCompanyNum() {
-	return this->companyNum;
+string Recruitment::getBusinessNum() {
+	return this->businessNum;
 }
 string Recruitment::getTask() {
 	return this->task;
@@ -18,9 +25,8 @@ int Recruitment::getNumPeople() {
 string Recruitment::getApplyDeadline() {
 	return this->applyDeadline;
 }
-// selectRecruitmentByCompanyName 필요없어서 getRecruitment() 사용.
 Recruitment Recruitment::getRecruitment() {
-	return Recruitment(this->companyName, this->companyNum, this->task, this->numPeople, this->applyDeadline);
+	return Recruitment(this->companyName, this->businessNum, this->task, this->numPeople, this->applyDeadline);
 }
 void Recruitment::addPerson() {
 	(this->numPeople)++;

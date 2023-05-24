@@ -6,20 +6,15 @@ using namespace std;
 
 class Member {
 private :
+//protected:
 	string id;
 	string password;
 	bool isActivated = false;
 	bool isClassifiedAsCompany;
-	void setActivated();
+	// void setActivated();
 
 public :
 	Member(string id, string password);
 	string getId();
 	string getPassword();
-	void createNewMember();
-	void deleteMember();
-	Member getMember();
-	void activateMember();
-	void deactivateMember();
-	void getMemberClassifier();
 };
