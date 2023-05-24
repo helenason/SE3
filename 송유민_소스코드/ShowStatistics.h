@@ -1,22 +1,13 @@
+#pragma once
 #include<iostream>
 #include<unordered_map>
+#include"ShowStatisticsUI.h"
+
 using namespace std;
 
-class ShowStatistics;
+class ShowStatisticsUI;
 class Member;
 
-/*
-	클래스 이름 :
-	기능	  :
-*/
-class ShowStatisticsUI
-{
-private:
-	ShowStatistics* showStatistics;
-public:
-	ShowStatisticsUI(ShowStatistics* showStatistics);
-	void printStatistics(FILE* inputFile, FILE* outputFile, Member* member);
-};
 
 /*
 	클래스 이름 :

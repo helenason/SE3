@@ -1,7 +1,14 @@
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include "CancelApplication.h"
 #include "ShowApplications.h"
 #include "ShowStatistics.h"
+#include "Member.h"
+#include "Application.h"
+#include "ApplicationCollection.h"
+#include "Company.h"
+#include "Person.h"
+#include "Recruitment.h"
 
 
 
@@ -9,17 +16,22 @@
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
-//함수 선언
-void program_exit();
 
 //변수 선언
 
 int main()
 {
+
+	Member* members[100];
+	int membersCount = 0;
+
 	Person* person = new Person();
 	Member* loginMember = person;
-	Company* company = new Company();
+
 	Company* companies[100];
+	int companiesCount = 1;
+
+	Company* company = new Company();
 	companies[0] = company;
 
 
@@ -33,6 +45,10 @@ int main()
 	//ShowStatistics의 controll, boundary 클래스 생성
 	ShowStatistics* showStatistics = new ShowStatistics();
 	ShowStatisticsUI* showStatisticsUI = showStatistics->getShowStatisticsUI();
+
+	//ShowApplications의 controll, boundary 클래스 생성
+	ShowApplications* showApplications = new ShowApplications();
+	ShowApplicationsUI* showApplicationsUI = showApplications->getShowApplicationsUI();
 
 	// 메뉴 파싱을 위한 level 구분을 위한 변수
 	int menu_level_1 = 0, menu_level_2 = 0;
@@ -53,12 +69,13 @@ int main()
 			{
 			case 3: // "4.3. 지원 정보 조회" 메뉴 부분
 			{
+				showApplicationsUI->showAllApplications(inputFile, outputFile, loginMember);
 
 				break;
 			}
 			case 4: // "4.4. 지원 취소" 메뉴 부분
 			{
-				cancelApplicationUI->selectApplication(inputFile, outputFile, loginMember, companies);
+				cancelApplicationUI->selectApplication(inputFile, outputFile, loginMember, companies, companiesCount);
 				break;
 			}
 			}
@@ -81,7 +98,7 @@ int main()
 			case 1: // "6.1. 종료“ 메뉴 부분
 			{
 
-				program_exit();
+				fprintf(outputFile, "6.1. 종료\n");
 				is_program_exit = 1;
 				break;;
 			}
@@ -91,9 +108,4 @@ int main()
 		}
 	}
 	return 0;
-}
-
-void program_exit()
-{
-	
 }

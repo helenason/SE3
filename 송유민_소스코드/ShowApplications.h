@@ -1,15 +1,13 @@
-#include<iostream>
+#pragma once
+#include <iostream>
+#include <string>
+#include "ShowApplicationsUI.h"
+#include "Member.h"
+
 using namespace std;
 
-/*
-	클래스 이름 :
-	기능	  :
-*/
-class ShowApplicationsUI
-{
-public:
-	void showAllApplications();
-};
+class ApplicationCollection;
+class ShowApplicationsUI;
 
 /*
 	클래스 이름 :
@@ -17,5 +15,10 @@ public:
 */
 class ShowApplications
 {
-	void showApplications();
+private:
+	ShowApplicationsUI* showApplicationsUI;
+public:
+	ShowApplications();
+	ShowApplicationsUI* getShowApplicationsUI();
+	ApplicationCollection* showApplications(Member* member);
 };
