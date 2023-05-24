@@ -7,9 +7,9 @@ using namespace std;
 class Company {
 private:
 	string companyName;
-    Recruitment recruitment; // has-a 관계 표현
+	int businessNum;
 
 public:
 	Company();
-	string getCompany();
+	int getBusinessNum();
 };

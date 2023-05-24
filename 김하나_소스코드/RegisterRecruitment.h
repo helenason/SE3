@@ -7,6 +7,6 @@ class RegisterRecruitment {
 private:
 
 public:
-    addNewRecruitment();
-    registerNewRecruitment();
-}
+    void addNewRecruitment();
+    void registerNewRecruitment(FILE* inputFile, FILE* outputFile);
+};

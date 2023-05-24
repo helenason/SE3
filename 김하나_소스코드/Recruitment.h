@@ -14,7 +14,6 @@ private:
 public:
 	Recruitment();
 	void inputDetails(string task, int numPeople, string applyDeadline);
-    void showCompanyRecruitments();
     void getRecruitment();
     void listRecruitmentDetails();
 };

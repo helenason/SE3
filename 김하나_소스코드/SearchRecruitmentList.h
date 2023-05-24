@@ -7,5 +7,5 @@ class SearchRecruitment {
 private:
 
 public:
-    searchMemberRecruitments();
-}
+    void searchMemberRecruitments();
+};
