@@ -8,10 +8,10 @@
 using namespace std;
 
 /*
-    ÇÔ¼ö ÀÌ¸§: RegisterRecruitment::registerNewRecruitment()
-    ±â´É: »õ·Î¿î recruitment instance(newRecruitment)¸¦ »ı¼ºÇÔ; ±×·¯±â À§ÇØ
-    Àü´Ş ÀÎÀÚ: string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member
-    ¹İÈ¯°ª: »ı¼ºµÈ newRecruitment
+    í•¨ìˆ˜ ì´ë¦„: RegisterRecruitment::registerNewRecruitment()
+    ê¸°ëŠ¥: ìƒˆë¡œìš´ recruitment instance(newRecruitment)ë¥¼ ìƒì„±í•¨; ê·¸ëŸ¬ê¸° ìœ„í•´
+    ì „ë‹¬ ì¸ì: string task, int numPeople, string applyDeadline, Member* member
+    ë°˜í™˜ê°’: ìƒì„±ëœ newRecruitment
 */
 Recruitment* RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* member)
 {
