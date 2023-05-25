@@ -6,11 +6,11 @@
 #include "RegisterRecruitment.h"
 
 /*
-    ÇÔ¼ö ÀÌ¸§: RegisterRecruitmentUI::inputDetails()
-    ±â´É: input file·ÎºÎÅÍ ¾÷¹«, ÀÎ¿ø ¼ö, ½ÅÃ»¸¶°¨ÀÏÀ» ÀÔ·Â¹Þ¾Æ, ÀÌ¸¦ »õ·Î¿î Recruitment¸¦ ¸¸µå´Â µ¥¿¡ »ç¿ë;
-         »õ·Î¿î recruitment »ý¼º ÈÄ, ÇØ´ç Ã¤¿ë°ø°íÀÇ ¾÷¹«, ÀÎ¿ø ¼ö, ½ÅÃ»¸¶°¨ÀÏÀ» Ãâ·ÂÇÔ
-    Àü´Þ ÀÎÀÚ: FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember
-    ¹ÝÈ¯°ª: ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„: RegisterRecruitmentUI::inputDetails()
+    ê¸°ëŠ¥: input fileë¡œë¶€í„° ì—…ë¬´, ì¸ì› ìˆ˜, ì‹ ì²­ë§ˆê°ì¼ì„ ìž…ë ¥ë°›ì•„, ì´ë¥¼ ìƒˆë¡œìš´ Recruitmentë¥¼ ë§Œë“œëŠ” ë°ì— ì‚¬ìš©;
+         ìƒˆë¡œìš´ recruitment ìƒì„± í›„, í•´ë‹¹ ì±„ìš©ê³µê³ ì˜ ì—…ë¬´, ì¸ì› ìˆ˜, ì‹ ì²­ë§ˆê°ì¼ì„ ì¶œë ¥í•¨
+    ì „ë‹¬ ì¸ìž: FILE* in_fp, FILE* out_fp, Member* loginMember
+    ë°˜í™˜ê°’: ì—†ìŒ
 */
 void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Member* loginMember)
 {
@@ -22,10 +22,10 @@ void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Member* logi
 
     RegisterRecruitment registerRecruitment;
     Recruitment* newRecruitment;
-
-
+    
+    // ìƒˆë¡œìš´ ì±„ìš© ê³µê³  ìƒì„±
     newRecruitment = registerRecruitment.registerNewRecruitment(newTask, newNumPeople, newDeadline, loginMember);
 
-    fprintf(out_fp, "3.1. Ã¤¿ë Á¤º¸ µî·Ï\n");
+    fprintf(out_fp, "3.1. ì±„ìš© ì •ë³´ ë“±ë¡\n");
     fprintf(out_fp, "> %s %d %s\n\n", newTask, newNumPeople, newDeadline);
 }
