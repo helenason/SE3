@@ -1,19 +1,27 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include<string>
-#include"SignoutUI.h"
-#include"Person.h"
-#include"Company.h"
+#include "SignoutUI.h"
+#include"Signout.h"
+#include"Member.h"
+
+using namespace std;
 
 SignoutUI::SignoutUI(Signout* signout)
 {
 	this->signout = signout;
 }
 
-void SignoutUI::signoutUI(FILE* inputFile, FILE* outputFile, Member* loginMember, Member** members, int membersCount, Person** persons, int personsCount, Company** companies, int companiesCount) {
+void SignoutUI::signoutUI(FILE* inputFile, FILE* outputFile, Member* loginMember, Member** members, int* membersCount, Company** companies, int* companiesCount) {
 	fprintf(outputFile, "1.2. È¸¿øÅ»Åð\n");
+	
+	string loginMemberId = loginMember->getId();
+	const char* loginMemberIdChar = loginMemberId.c_str();
 
-	signout->signout(loginMember, members, membersCount, persons, personsCount, companies, companiesCount);
+	signout->signout(loginMember, members, membersCount, companies, companiesCount);
 
-	fprintf(outputFile, "> %s\n", loginMember->getId());
+	
+
+	fprintf(outputFile, "> %s\n", loginMemberIdChar);
 	fprintf(outputFile, "\n");
 }

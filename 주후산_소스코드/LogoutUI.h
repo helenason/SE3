@@ -1,13 +1,11 @@
 #pragma once
 #include<iostream>
-#include"Logout.h"
-#include"Member.h"
-#include"Person.h"
-#include"Company.h"
+#include "Logout.h"
 
 using namespace std;
 
 class Logout;
+class Member;
 
 class LogoutUI
 {

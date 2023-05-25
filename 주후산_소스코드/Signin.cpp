@@ -1,7 +1,11 @@
+#pragma once
 #include <string>
-#include"Signin.h"
+#include "Signin.h"
+#include "SigninUI.h"
 #include"Person.h"
-#include"Company.h"
+#include "Company.h"
+
+using namespace std;
 
 Signin::Signin()
 {
@@ -12,7 +16,23 @@ SigninUI* Signin::getSigninUI() {
 	return signinUI;
 }
 
-Member* Signin::signin(int memClassifier, string name, int num, string id, string password, Person** persons, int personsCount, Company** companies, int companiesCount) {
-	Member* member;
-	return member->createNewMember(memClassifier, name, num, id, password, persons, personsCount, companies, companiesCount);
+void Signin::signin(int memClassifier, string name, string regNumOrBusinessNum, string id, string password, Member** members, int* membersCount, Company** companies, int* companiesCount) {
+	Person* newPerson = 0;
+	Company* newCompany = 0;
+	cout << "memClassifier: " << memClassifier<<endl;
+	switch (memClassifier)
+	{
+	case 1:
+		newPerson = new Person(memClassifier, name, regNumOrBusinessNum, id, password);
+		members[(* membersCount)++] = newPerson;
+		cout <<"*membersCount: "<< * membersCount;
+		break;
+	case 2:
+		newCompany = new Company(memClassifier, name, regNumOrBusinessNum, id, password);
+		members[(* membersCount)++] = newCompany;
+		companies[(* companiesCount)++] = newCompany;
+		break;
+	default:
+		break;
+	}
 }

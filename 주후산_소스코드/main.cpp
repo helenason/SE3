@@ -8,6 +8,12 @@
 #include"Signout.h"
 #include"Login.h"
 #include"Logout.h"
+#include "LoginUI.h"
+#include "LogoutUI.h"
+#include "SigninUI.h"
+#include "SignoutUI.h"
+
+using namespace std;
 
 //상수 선언
 #define MAX_STRING 32
@@ -19,18 +25,16 @@ void program_exit();
 
 int main() {
 	//변수 선언
-	Member* loginMember;
+	Member* loginMember=0;
 	Member* members[100];
 	int membersCount = 0;
-
-	Person* persons[100];
-	int personsCount = 0;
 
 	Company* companies[100];
 	int companiesCount = 0;
 
 	FILE* inputFile = fopen(INPUT_FILE_NAME, "r+");
 	FILE* outputFile = fopen(OUTPUT_FILE_NAME, "w+");
+
 
 	//Signin의 control, boundary 클래스 생성
 	Signin* signin = new Signin();
@@ -65,15 +69,18 @@ int main() {
 			{
 			case 1:
 			{
-				signinUI->signinUI(inputFile, outputFile, members, membersCount, persons, personsCount, companies, companiesCount);
+				signinUI->signinUI(inputFile, outputFile, members, &membersCount, companies, &companiesCount);
+				cout << "회원가입 후 membersCount: " << membersCount<<endl;
 				break;
 			}
 			case 2:
 			{
-				signoutUI->signoutUI(inputFile, outputFile, loginMember, members, membersCount, persons, personsCount, companies, companiesCount);
+				signoutUI->signoutUI(inputFile, outputFile, loginMember, members, &membersCount, companies, &companiesCount);
+				cout << "회원탈퇴 후 membersCount: " << membersCount << endl;
 				break;
 			}
 			}
+			break;
 		}
 		case 2:
 		{
@@ -81,16 +88,37 @@ int main() {
 			{
 			case 1:
 			{
-				loginUI->loginUI(inputFile, outputFile, loginMember, members, membersCount);
+				loginMember = loginUI->loginUI(inputFile, outputFile, members, &membersCount);
+				cout << "loginMember ID: " << loginMember->getId() << endl;
 				break;
 			}
 			case 2:
 			{
+				cout << "loginMember ID: " << loginMember->getId() << endl;
 				logoutUI->logoutUI(inputFile, outputFile, loginMember);
+
+				loginMember = NULL;
+
 				break;
 			}
 			}
+			break;
 		}
+		case 6:
+		{
+			switch (menu_level_2)
+			{
+			case 1: // "6.1. 종료“ 메뉴 부분
+			{
+
+				fprintf(outputFile, "6.1. 종료\n");
+				is_program_exit = 1;
+				break;;
+			}
+			}
+			break;
+		}
+			
 		}
 	}
 

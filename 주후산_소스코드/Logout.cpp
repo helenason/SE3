@@ -1,6 +1,8 @@
+#pragma once
 #include<string>
-#include"Logout.h"
-#include"Member.h"
+#include "Logout.h"
+
+using namespace std;
 
 Logout::Logout()
 {
@@ -14,6 +16,5 @@ LogoutUI* Logout::getLogoutUI()
 
 void Logout::logout(Member* loginMember) 
 {
-	Member* member;
-	member->memberLogout(loginMember);
+	loginMember = NULL;
 }

@@ -1,12 +1,13 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include"SigninUI.h"
-#include"Member.h"
 
 using namespace std;
 
 class SigninUI;
+class Member;
+class Person;
+class Company;
 
 class Signin
 {
@@ -15,6 +16,6 @@ private:
 public:
 	Signin();
 	SigninUI* getSigninUI();
-	Member* signin(int memClassifier, string name, int num, string id, string password, Person** persons, int personsCount, Company** companies, int companiesCount);
+	void signin(int memClassifier, string name, string regNumOrBusinessNum, string id, string password, Member**members, int* membersCount, Company** companies, int* companiesCount);
 };
 

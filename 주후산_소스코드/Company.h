@@ -2,21 +2,17 @@
 #include <iostream>
 #include <string>
 #include "Member.h"
+
 using namespace std;
+
 
 class Company : public Member 
 {
 private:
 	string companyName;
-	int businessNum;
-	string id;
-	string password;
+	string businessNum;
 public:
-	Company(string companyName, int businessNum, string id, string password) :Member(id, password) {
-		this->companyName = companyName;
-		this->businessNum = businessNum;
-	}
+	Company(int memClassifier, string companyName, string businessNum, string id, string password);
 	string getCompanyName();
-	int getBusinessNum();
-	Company getCompany(string companyName);
+	string getBusinessNum();
 };

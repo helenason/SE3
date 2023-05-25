@@ -2,23 +2,17 @@
 #include <iostream>
 #include <string>
 #include "Member.h"
+
 using namespace std;
+
+
 
 class Person : public Member {
 private:
 	string personName;
-	int regNum;
-	string id;
-	string password;
+	string regNum;
 public:
-	Person(string personName, int regNum, string id, string password) :Member(id, password) {
-		this->id = id;
-		this->password = password;
-		this->personName = personName;
-		this->regNum = regNum;
-	}
+	Person(int memClassifier, string personName, string regNum, string id, string password);
 	string getPersonName();
-	int getRegNum();
-	Person getPerson(string personName);
-	~Person();
+	string getRegNum();
 };

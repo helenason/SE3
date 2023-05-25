@@ -1,12 +1,13 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include"SignoutUI.h"
-#include"Member.h"
 
 using namespace std;
 
 class SignoutUI;
+class Member;
+class Person;
+class Company;
 
 class Signout
 {
@@ -15,5 +16,5 @@ private:
 public:
 	Signout();
 	SignoutUI* getSignoutUI();
-	void signout(Member* loginMember, Member** members, int membersCount, Person** persons, int personsCount, Company** companies, int companiesCount);
+	void signout(Member* loginMember, Member** members, int* membersCount, Company** companies, int* companiesCount);
 };

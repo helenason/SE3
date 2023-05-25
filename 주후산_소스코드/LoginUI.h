@@ -1,13 +1,11 @@
 #pragma once
 #include<iostream>
-#include"Login.h"
-#include"Member.h"
-#include"Person.h"
-#include"Company.h"
+#include "Login.h"
 
 using namespace std;
 
 class Login;
+class Member;
 
 class LoginUI
 {
@@ -15,5 +13,5 @@ private:
 	Login* login;
 public:
 	LoginUI(Login* login);
-	void loginUI(FILE* inputFile, FILE* outputFile, Member* loginMember, Member** members, int membersCount);
+	Member* loginUI(FILE* inputFile, FILE* outputFile, Member** members, int* membersCount);
 };
