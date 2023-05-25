@@ -7,14 +7,12 @@
 using namespace std;
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : Search::searchRecruitmentByCompanyName()
-	±â´É	  : ÀÎÀÚ·Î ¹ŞÀº companyNameÀ» °¡Áø companyÀÇ Ã¤¿ë Á¤º¸ ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : string companyName, Company** companies, int companiesCount
-	¹İÈ¯°ª    : ÇØ´ç È¸»çÀÇ Ã¤¿ë Á¤º¸ ¹İÈ¯
+	í•¨ìˆ˜ ì´ë¦„ : Search::searchRecruitmentByCompanyName()
+	ê¸°ëŠ¥	  : ê²€ìƒ‰ (ì¸ìë¡œ ë°›ì€ companyNameì„ ê°€ì§„ companyì˜ ì±„ìš© ì •ë³´ ë°˜í™˜)
+	ì „ë‹¬ ì¸ì : string companyName, Company** companies, int companiesCount
+	ë°˜í™˜ê°’    : í•´ë‹¹ íšŒì‚¬ì˜ ì±„ìš© ì •ë³´ ë°˜í™˜
 */
 Recruitment* Search::searchRecruitmentByCompanyName(string companyName, Company** companies, int companiesCount) {
-
-	// companyNameÀ» °¡Áø company select ÈÄ return
 
 	for (int i = 0; i < companiesCount; i++) {
 		if (companyName == companies[i]->getCompanyName()) {

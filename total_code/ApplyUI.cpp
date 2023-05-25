@@ -10,7 +10,7 @@
 
 /*
 	함수 이름 : ApplyUI::enterTerms()
-	기능	  : boundary 클래스로서 입력 및 출력 기능
+	기능	  : 입력 및 출력
 	전달 인자 : FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember
 	반환값    : 없음
 */

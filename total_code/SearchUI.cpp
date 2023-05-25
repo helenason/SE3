@@ -6,10 +6,10 @@
 #include "Search.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : SearchUI::enterTerms()
-	±â´É	  : ÀÔ·Â ¹× Ãâ·Â
-	Àü´Þ ÀÎÀÚ : FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : SearchUI::enterTerms()
+	ê¸°ëŠ¥	  : ìž…ë ¥ ë° ì¶œë ¥
+	ì „ë‹¬ ì¸ìž : FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 void SearchUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount) {
@@ -32,7 +32,7 @@ void SearchUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int co
 	const char* deadlineChar = deadline.c_str();
 
 
-	fprintf(out_fp, "4.1. Ã¤¿ë Á¤º¸ °Ë»ö\n");
+	fprintf(out_fp, "4.1. Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½\n");
 	fprintf(out_fp, "> %s %s %s %d %s\n\n", companyName, businessNumChar, taskChar, nPeople, deadlineChar);
 
 }

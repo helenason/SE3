@@ -28,11 +28,12 @@ SignoutUI* Signout::getSignoutUI()
 {
 	return signoutUI;
 }
+
 /*
-	�Լ� �̸� :
-	���	  :
-	���� ���� :
-	��ȯ��    :
+    함수 이름 : Signout::signout()
+    기능	  : 전달받은 member 객체가 저장되어있는 member 배열 및 company 배열에서 제거
+    전달 인자 : Member* loginMember, Member** members, int* membersCount, Company** companies, int* companiesCount
+    반환값    : 없음
 */
 void Signout::signout(Member* loginMember, Member** members, int* membersCount, Company** companies, int* companiesCount)
 {
