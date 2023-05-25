@@ -10,5 +10,5 @@ class SearchRecruitmentList {
 private:
 
 public:
-    Recruitment* searchCompanyRecruitments(string ID,  Member* member);
+    Recruitment* searchCompanyRecruitments(string ID, Member* member);
 };

@@ -9,18 +9,19 @@
 using namespace std;
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: RegisterRecruitment::registerNewRecruitment()
-    ê¸°ëŠ¥: ìƒˆë¡œìš´ recruitment instance(newRecruitment)ë¥¼ ìƒì„±í•¨; ê·¸ëŸ¬ê¸° ìœ„í•´
-    ì „ë‹¬ ì¸ì: string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member
-    ë°˜í™˜ê°’: ìƒì„±ëœ newRecruitment
+    ÇÔ¼ö ÀÌ¸§: RegisterRecruitment::registerNewRecruitment()
+    ±â´É: »õ·Î¿î recruitment instance(newRecruitment)¸¦ »ı¼ºÇÔ; ±×·¯±â À§ÇØ
+    Àü´Ş ÀÎÀÚ: string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member
+    ¹İÈ¯°ª: »ı¼ºµÈ newRecruitment
 */
-Recruitment* RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member)
+Recruitment* RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* member)
 {
     string businessNum = member->getBusinessNum();
-    string companyName = company->getCompanyName(businessNum, companies, companiesCount);
+    string id = member->getId();
+    string companyName = member->getCompanyName();
 
-    Recruitment* newRecruitment = new Recruitment(companyName, businessNum, task, numPeople, applyDeadline);
-    company->addRecruitment(newRecruitment);
+    Recruitment* newRecruitment = new Recruitment(companyName, businessNum, task, numPeople, applyDeadline, id);
+    member->addRecruitment(newRecruitment);
 
     return newRecruitment;
 }

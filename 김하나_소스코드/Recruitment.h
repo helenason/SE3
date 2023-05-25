@@ -15,6 +15,7 @@ private:
 
 public:
 	Recruitment(string name, string num, string task, int nPeople, string deadline, string ID);
+	Recruitment getRecruitment();
 	string getCompanyName();
 	string getBusinessNum();
 	string getTask();

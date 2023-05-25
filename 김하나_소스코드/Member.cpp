@@ -7,46 +7,46 @@
 using namespace std;
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: Member::Member()
-    ê¸°ëŠ¥: Member Constructor
-    ì „ë‹¬ ì¸ì: string id, string password
-    ë°˜í™˜ê°’: ì—†ìŒ
+    ÇÔ¼ö ÀÌ¸§: Member::Member()
+    ±â´É: Member Constructor
+    Àü´Ş ÀÎÀÚ: string id, string password
+    ¹İÈ¯°ª: ¾øÀ½
 */
 Member::Member(string id, string password) {
-	this->id = id;
-	this->password = password;
+    this->id = id;
+    this->password = password;
 }
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: Member::getId()
-    ê¸°ëŠ¥: memberì˜ id ë°˜í™˜
-    ì „ë‹¬ ì¸ì: ì—†ìŒ
-    ë°˜í™˜ê°’: id
+    ÇÔ¼ö ÀÌ¸§: Member::getId()
+    ±â´É: memberÀÇ id ¹İÈ¯
+    Àü´Ş ÀÎÀÚ: ¾øÀ½
+    ¹İÈ¯°ª: id
 */
 string Member::getId() {
-	return this->id;
+    return this->id;
 }
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: Member::getPassword()
-    ê¸°ëŠ¥: memberì˜ password ë°˜í™˜
-    ì „ë‹¬ ì¸ì: ì—†ìŒ
-    ë°˜í™˜ê°’: password
+    ÇÔ¼ö ÀÌ¸§: Member::getPassword()
+    ±â´É: memberÀÇ password ¹İÈ¯
+    Àü´Ş ÀÎÀÚ: ¾øÀ½
+    ¹İÈ¯°ª: password
 */
 string Member::getPassword() {
-	return this->password;
+    return this->password;
 }
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: Member::getBusinessNum()
-    ê¸°ëŠ¥: memberì˜ businessNum ë°˜í™˜
-    ì „ë‹¬ ì¸ì: ì—†ìŒ
-    ë°˜í™˜ê°’: businessNum
+    ÇÔ¼ö ÀÌ¸§: Member::getBusinessNum()
+    ±â´É: memberÀÇ businessNum ¹İÈ¯
+    Àü´Ş ÀÎÀÚ: ¾øÀ½
+    ¹İÈ¯°ª: businessNum
 */
 string Member::getBusinessNum() {
-	return this->businessNum;
+    return this->businessNum;
 }
 
-Recruitment* Member::getRecruitment() {
-
-}
+Recruitment* Member::getRecruitment() { return nullptr; }
+string Member::getCompanyName() { return ""; }
+void Member::addRecruitment(Recruitment* newRecruitment) {}

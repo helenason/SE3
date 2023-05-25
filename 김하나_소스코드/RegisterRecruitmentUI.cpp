@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "RegisterRecruitmentUI.h"
 #include "RegisterRecruitment.h"
@@ -7,29 +8,26 @@
 #include "Company.h"
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: RegisterRecruitmentUI::inputDetails()
-    ê¸°ëŠ¥: input fileë¡œë¶€í„° ì—…ë¬´, ì¸ì› ìˆ˜, ì‹ ì²­ë§ˆê°ì¼ì„ ìž…ë ¥ë°›ì•„, ì´ë¥¼ ìƒˆë¡œìš´ Recruitmentë¥¼ ë§Œë“œëŠ” ë°ì— ì‚¬ìš©;
-         ìƒˆë¡œìš´ recruitment ìƒì„± í›„, í•´ë‹¹ ì±„ìš©ê³µê³ ì˜ ì—…ë¬´, ì¸ì› ìˆ˜, ì‹ ì²­ë§ˆê°ì¼ì„ ì¶œë ¥í•¨
-    ì „ë‹¬ ì¸ìž: FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember
-    ë°˜í™˜ê°’: ì—†ìŒ
+    ÇÔ¼ö ÀÌ¸§: RegisterRecruitmentUI::inputDetails()
+    ±â´É: input file·ÎºÎÅÍ ¾÷¹«, ÀÎ¿ø ¼ö, ½ÅÃ»¸¶°¨ÀÏÀ» ÀÔ·Â¹Þ¾Æ, ÀÌ¸¦ »õ·Î¿î Recruitment¸¦ ¸¸µå´Â µ¥¿¡ »ç¿ë;
+         »õ·Î¿î recruitment »ý¼º ÈÄ, ÇØ´ç Ã¤¿ë°ø°íÀÇ ¾÷¹«, ÀÎ¿ø ¼ö, ½ÅÃ»¸¶°¨ÀÏÀ» Ãâ·ÂÇÔ
+    Àü´Þ ÀÎÀÚ: FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember
+    ¹ÝÈ¯°ª: ¾øÀ½
 */
-void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember)
+void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Member* loginMember)
 {
-    Company* company;
-    string newTask;
-    int newNumPeople;
-    string newDeadline;
+    char newTask[32];
+    //char newNumPeople = '0';
+    int newNumPeople = 0;
+    char newDeadline[32];
 
-    fscanf(in_fp, "%s %d %s", newTask, newNumPeople, newDeadline);
-
-    const char* Task = newTask.c_str();
-    const char* Deadline = newDeadline.c_str();
+    fscanf(in_fp, "%s %d %s", newTask, &newNumPeople, newDeadline);
 
     RegisterRecruitment registerRecruitment;
     Recruitment* newRecruitment;
 
-    newRecruitment = registerRecruitment.registerNewRecruitment(Task, newNumPeople, Deadline, company, companies, companiesCount, loginMember);
+    newRecruitment = registerRecruitment.registerNewRecruitment(newTask, newNumPeople, newDeadline, loginMember);
 
-    fprintf(out_fp, "3.1. ì±„ìš© ì •ë³´ ë“±ë¡\n");
-    fprintf(out_fp, "%s %d %s\n", Task, newNumPeople, Deadline);
+    fprintf(out_fp, "3.1. Ã¤¿ë Á¤º¸ µî·Ï\n");
+    fprintf(out_fp, "> %s %d %s\n", newTask, newNumPeople, newDeadline);
 }

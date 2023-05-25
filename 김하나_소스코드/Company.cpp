@@ -1,10 +1,18 @@
 #pragma once
 #include <iostream>
 #include "Company.h"
+#include "Recruitment.h"
 
 using namespace std;
 
-Company::Company() {}
+Company::Company(int numRecruitments, string companyName, string businessNum, string id, string password) : Member(id, password) {
+    this->numRecruitments = numRecruitments;
+    this->companyName = companyName;
+    this->businessNum = businessNum;
+    this->id = id;
+    this->password = password;
+    this->ownedRecruitment = new Recruitment("a", "a", "a", 1, "A", "a");
+}
 
 Recruitment* Company::getRecruitment() {
     return this->ownedRecruitment;
@@ -15,39 +23,31 @@ string Company::getBusinessNum() {
 }
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: Company::getCompanyName()
-    ê¸°ëŠ¥: ì „ë‹¬ ì¸ìì¸ businessNum(ì‚¬ì—…ìë²ˆí˜¸)ê³¼ companiesì˜ getBusinessNum()ì„ ì´ìš©í•˜ì—¬ ë°˜í™˜ë°›ì€ ì‚¬ì—…ìë²ˆí˜¸ê°€ ë™ì¼í•˜ë©´, companyNameì„ ë°˜í™˜í•¨
-    ì „ë‹¬ ì¸ì: string businessNum, Company** companies, int companiesCount
-    ë°˜í™˜ê°’: companyName
+    ÇÔ¼ö ÀÌ¸§: Company::getCompanyName()
+    ±â´É: Àü´Ş ÀÎÀÚÀÎ businessNum(»ç¾÷ÀÚ¹øÈ£)°ú companiesÀÇ getBusinessNum()À» ÀÌ¿ëÇÏ¿© ¹İÈ¯¹ŞÀº »ç¾÷ÀÚ¹øÈ£°¡ µ¿ÀÏÇÏ¸é, companyNameÀ» ¹İÈ¯ÇÔ
+    Àü´Ş ÀÎÀÚ: string businessNum, Company** companies, int companiesCount
+    ¹İÈ¯°ª: companyName
 */
-string Company::getCompanyName(string businessNum, Company** companies, int companiesCount) {
-
-    for (int i = 0; i < companiesCount; i++) {
-        if (businessNum == companies[i]->getBusinessNum()) {
-            return companies[i]->companyName;
-            break;
-        }
-    }
+string Company::getCompanyName() {
+    return this->companyName;
 }
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: Company::addRecruitment()
-    ê¸°ëŠ¥: ì „ë‹¬ ì¸ìì¸ recruitmentë¥¼ ownedRecruitmentë¡œ ì €ì¥í•˜ì—¬, ìƒˆë¡œìš´ recruitmentì„ companyì— ì¶”ê°€í•¨;
-         ë˜í•œ, companyë‹¹ recruitment ìˆ˜ë¥¼ ì•Œ ìˆ˜ ìˆë„ë¡, ì¶”ê°€í•  ë•Œ, numRecruitmentsë¥¼ ì¦ê°€ì‹œí‚´
-    ì „ë‹¬ ì¸ì: Recruitment* recruitment
-    ë°˜í™˜ê°’: ì—†ìŒ
+    ÇÔ¼ö ÀÌ¸§: Company::addRecruitment()
+    ±â´É: Àü´Ş ÀÎÀÚÀÎ recruitment¸¦ ownedRecruitment·Î ÀúÀåÇÏ¿©, »õ·Î¿î recruitmentÀ» company¿¡ Ãß°¡ÇÔ;
+         ¶ÇÇÑ, company´ç recruitment ¼ö¸¦ ¾Ë ¼ö ÀÖµµ·Ï, Ãß°¡ÇÒ ¶§, numRecruitments¸¦ Áõ°¡½ÃÅ´
+    Àü´Ş ÀÎÀÚ: Recruitment* recruitment
+    ¹İÈ¯°ª: ¾øÀ½
 */
-void Company::addRecruitment(Recruitment* recruitment) {
-    this->ownedRecruitment = recruitment;
-    numRecruitments++;
-}
-
 /*
-    í•¨ìˆ˜ ì´ë¦„: Company::getRecruitmentsNum()
-    ê¸°ëŠ¥: ê° companyê°€ ê°–ê³ ìˆëŠ” recruitmentì˜ ê°œìˆ˜ ë°˜í™˜
-    ì „ë‹¬ ì¸ì: ì—†ìŒ
-    ë°˜í™˜ê°’: numRecruitments
+    ÇÔ¼ö ÀÌ¸§: Company::getRecruitmentsNum()
+    ±â´É: °¢ company°¡ °®°íÀÖ´Â recruitmentÀÇ °³¼ö ¹İÈ¯
+    Àü´Ş ÀÎÀÚ: ¾øÀ½
+    ¹İÈ¯°ª: numRecruitments
 */
 int Company::getRecruitmentsNum() {
     return this->numRecruitments;
+}
+void Company::addRecruitment(Recruitment* newRecruitment) {
+    this->ownedRecruitment = newRecruitment;
 }

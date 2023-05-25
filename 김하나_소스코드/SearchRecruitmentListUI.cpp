@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "SearchRecruitmentListUI.h"
 #include "SearchRecruitmentList.h"
@@ -7,24 +8,27 @@
 #include "Company.h"
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: SearchRecruitmentListUI::searchRecruitments()
-    ê¸°ëŠ¥: out_fpì— íšŒì‚¬ ì§ì›ì´ ë“±ë¡í•œ ì±„ìš© ì •ë³´ë¥¼ ì¡°íšŒí•œ ê²°ê³¼ ë°˜í™˜
-    ì „ë‹¬ ì¸ìž: File* out_fp, Member* loginMember
-    ë°˜í™˜ê°’: ì—†ìŒ
+	ÇÔ¼ö ÀÌ¸§: SearchRecruitmentListUI::searchRecruitments()
+	±â´É: out_fp¿¡ È¸»ç Á÷¿øÀÌ µî·ÏÇÑ Ã¤¿ë Á¤º¸¸¦ Á¶È¸ÇÑ °á°ú ¹ÝÈ¯
+	Àü´Þ ÀÎÀÚ: File* out_fp, Member* loginMember
+	¹ÝÈ¯°ª: ¾øÀ½
 */
 void SearchRecruitmentListUI::searchRecruitment(FILE* out_fp, Member* loginMember) {
 
-    string loginID = loginMember->getId();
+	string loginID = loginMember->getId();
 
-	SearchRecruitmentList* searchList;
+	SearchRecruitmentList* searchList = nullptr;
 	Recruitment* searchedRecruitment;
 
 	searchedRecruitment = searchList->searchCompanyRecruitments(loginID, loginMember);
-    
-	const char* task = (searchedRecruitment->getTask()).c_str();
-	int nPeople = searchedRecruitment->getNumPeople();
-	const char* deadline = (searchedRecruitment->getApplyDeadline()).c_str();
 
-	fprintf(out_fp, "3.2. ë“±ë¡ëœ ì±„ìš© ì •ë³´ ì¡°íšŒ\n");
-	fprintf(out_fp, "%s %d %s\n", task, nPeople, deadline);
+	string task = searchedRecruitment->getTask();
+	string deadline = searchedRecruitment->getApplyDeadline();
+	int nPeople = searchedRecruitment->getNumPeople();
+
+	const char* taskChar = task.c_str();
+	const char* deadlineChar = deadline.c_str();
+
+	fprintf(out_fp, "3.2. µî·ÏµÈ Ã¤¿ë Á¤º¸ Á¶È¸\n");
+	fprintf(out_fp, "> %s %d %s\n", taskChar, nPeople, deadlineChar);
 }

@@ -1,22 +1,24 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include "Member.h"
 #include "Recruitment.h"
 
 using namespace std;
 
 class Company : public Member {
 private:
+	string id;
+	string password;
 	int numRecruitments;
 	string companyName;
 	string businessNum;
 	Recruitment* ownedRecruitment;
 
 public:
-	Company();
-	virtual Recruitment* getRecruitment();
+	Company(int numRecruitments, string companyName, string businessNum, string id, string password);
 	string getBusinessNum();
-	string getCompanyName(string businessNum, Company** companies, int companiesCount);
-	void addRecruitment(Recruitment* company);
+	virtual string getCompanyName();
 	int getRecruitmentsNum();
+	virtual Recruitment* getRecruitment();
+	virtual void addRecruitment(Recruitment* newRecruitment);
 };

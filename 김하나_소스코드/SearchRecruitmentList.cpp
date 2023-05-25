@@ -7,13 +7,13 @@
 using namespace std;
 
 /*
-    í•¨ìˆ˜ ì´ë¦„: SearchRecruitmentList::searchComapnyRecruitments()
-    ê¸°ëŠ¥: ì „ë‹¬ë°›ì€ IDì™€ recruitmentì„ ìƒì„±í•œ ìì˜ IDê°€ ë™ì¼í•˜ë©´, ë³¸ì¸ì´ ë“±ë¡í•œ ì±„ìš© ê³µê³ ë¡œ ë°›ì•„ë“¤ì—¬, í•´ë‹¹ ê³µê³  ë‚´ìš©ì„ ê°–ê³  ì˜´
-    ì „ë‹¬ ì¸ì: string businessNum, Recruitment* recruitment
-    ë°˜í™˜ê°’: recruitmentì˜ getRecruitment() í•¨ìˆ˜ í˜¸ì¶œí•œ í¬ì¸í„°
+    ÇÔ¼ö ÀÌ¸§: SearchRecruitmentList::searchComapnyRecruitments()
+    ±â´É: Àü´Ş¹ŞÀº ID¿Í recruitmentÀ» »ı¼ºÇÑ ÀÚÀÇ ID°¡ µ¿ÀÏÇÏ¸é, º»ÀÎÀÌ µî·ÏÇÑ Ã¤¿ë °ø°í·Î ¹Ş¾Æµé¿©, ÇØ´ç °ø°í ³»¿ëÀ» °®°í ¿È
+    Àü´Ş ÀÎÀÚ: string businessNum, Recruitment* recruitment
+    ¹İÈ¯°ª: recruitmentÀÇ getRecruitment() ÇÔ¼ö È£ÃâÇÑ Æ÷ÀÎÅÍ
 */
 Recruitment* SearchRecruitmentList::searchCompanyRecruitments(string ID, Member* member) {
 
-	return member->getRecruitment(); // virtual function ì´ìš©
+    return member->getRecruitment(); // virtual function ÀÌ¿ë
 
 }

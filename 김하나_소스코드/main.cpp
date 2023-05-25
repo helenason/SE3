@@ -1,6 +1,7 @@
+#pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-
 #include "Member.h"
 #include "Company.h"
 #include "Recruitment.h"
@@ -12,67 +13,67 @@
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
-FILE* in_fp, *out_fp;
-
 int main()
 {
-    // íŒŒì¼ ìž…ì¶œë ¥ì„ ìœ„í•œ ì´ˆê¸°í™”
+    // ÆÄÀÏ ÀÔÃâ·ÂÀ» À§ÇÑ ÃÊ±âÈ­
     FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
     FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
-    Member* loginMember;
+    Member* members[100];
+    int membersCount = 0;
 
-    // Recruitment* recruitments[100];
-    // int recruitmentsCount = 0;
-
+    Member* loginMember = new Company(123, "a", "a", "a", "a");
+    /*
     Company* companies[100];
-    int companiesCount = 0;
+    int companiesCount = 1;
+    companies[0] = new Company(5, "asdf", "asdf", "idid", "pwpw"); // test case !!
+    */
+    RegisterRecruitmentUI* registerUI = new RegisterRecruitmentUI();
+    SearchRecruitmentListUI* searchListUI = new SearchRecruitmentListUI();
 
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
-    RegisterRecruitmentUI* registerUI = new RegisterRecruitmentUI();
-    SearchRecruitmentListUI* searchListUI = new SearchRecruitmentListUI();
-
-    while(!is_program_exit)
+    while (!is_program_exit)
     {
-        // ìž…ë ¥íŒŒì¼ì—ì„œ ë©”ë‰´ ìˆ«ìž 2ê°œë¥¼ ì½ê¸°
+        // ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Þ´º ¼ýÀÚ 2°³¸¦ ÀÐ±â
         fscanf(in_fp, "%d %d", &menu_level_1, &menu_level_2);
 
-        // ë©”ë‰´ êµ¬ë¶„ ë° í•´ë‹¹ ì—°ì‚° ìˆ˜í–‰
-        switch(menu_level_1)
+        // ¸Þ´º ±¸ºÐ ¹× ÇØ´ç ¿¬»ê ¼öÇà
+        switch (menu_level_1)
         {
-            case 3:
+        case 3:
+        {
+            switch (menu_level_2)
             {
-                switch(menu_level_2)
-                {
-                    case 1: // "3.1 ì±„ìš© ì •ë³´ ë“±ë¡" ë©”ë‰´ ë¶€ë¶„
-                    {
-                        registerUI->inputDetails(in_fp, out_fp, companies, companiesCount, loginMember);
-                        break;
-                    }
-
-                    case 2: // "3.2 ë“±ë¡ëœ ì±„ìš© ì •ë³´ ì¡°íšŒ" ë©”ë‰´ ë¶€ë¶„
-                    {
-                        searchListUI->searchRecruitment(out_fp, loginMember);
-                        break;
-                    }
-                }
+            case 1: // "3.1 Ã¤¿ë Á¤º¸ µî·Ï" ¸Þ´º ºÎºÐ
+            {
+                registerUI->inputDetails(in_fp, out_fp, loginMember);
+                break;
             }
 
-            case 6:
+            case 2: // "3.2 µî·ÏµÈ Ã¤¿ë Á¤º¸ Á¶È¸" ¸Þ´º ºÎºÐ
             {
-                switch (menu_level_2)
-                {
-                case 1: // "6.1. ì¢…ë£Œ" ë©”ë‰´ ë¶€ë¶„
-                {
-
-                    fprintf(out_fp, "6.1. ì¢…ë£Œ\n");
-                    is_program_exit = 1;
-                    break;;
-                }
-                }
+                searchListUI->searchRecruitment(out_fp, loginMember);
+                break;
             }
+            }
+        }
+            break;
+
+        case 6:
+        {
+            switch (menu_level_2)
+            {
+            case 1: // "6.1. Á¾·á" ¸Þ´º ºÎºÐ
+            {
+
+                fprintf(out_fp, "6.1. Á¾·á\n");
+                is_program_exit = 1;
+                break;
+            }
+            }
+        }
         }
     }
     return 0;

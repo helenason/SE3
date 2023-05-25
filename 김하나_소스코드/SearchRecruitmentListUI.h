@@ -2,6 +2,6 @@
 #include "Member.h"
 
 class SearchRecruitmentListUI {
-public :
+public:
 	void searchRecruitment(FILE* out_fp, Member* loginMember);
 };
