@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/*
+    함수 이름: SearchRecruitmentList::searchComapnyRecruitments()
+    기능: 전달받은 businessNum과 recruitment의 businessNum이 동일하면, 본인이 등록한 채용 공고로 받아들여, 해당 공고 내용을 갖고옴
+    전달 인자: string businessNum, Recruitment* recruitment
+    반환값: recruitment의 getRecruitment() 함수 호출한 포인터
+*/
 Recruitment* SearchRecruitmentList::searchCompanyRecruitments(string businessNum, Recruitment* recruitment) {
 
 	if (businessNum == recruitment->getBusinessNum()) {

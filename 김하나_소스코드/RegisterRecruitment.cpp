@@ -11,8 +11,8 @@ using namespace std;
 /*
     함수 이름: RegisterRecruitment::registerNewRecruitment()
     기능: 새로운 recruitment instance(newRecruitment)를 생성함; 그러기 위해
-    전달 인자: string name, string num, string task, int nPeople, string deadline
-    반환값: 없음
+    전달 인자: string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member
+    반환값: 생성된 newRecruitment
 */
 Recruitment* RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member)
 {
