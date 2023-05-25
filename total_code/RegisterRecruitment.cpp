@@ -4,7 +4,6 @@
 #include "RegisterRecruitment.h"
 #include "Recruitment.h"
 #include "Member.h"
-#include "Company.h"
 
 using namespace std;
 

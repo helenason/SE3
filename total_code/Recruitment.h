@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/*
+	클래스 이름 :
+	기능	  :
+*/
 class Recruitment {
 private:
 	string companyName;
@@ -12,6 +16,7 @@ private:
 	int numPeople;
 	string memberID;
 	string applyDeadline;
+	int applicantsNum = 0;
 
 public:
 	Recruitment(string name, string num, string task, int nPeople, string deadline, string ID);
@@ -22,5 +27,5 @@ public:
 	string getID();
 	int getNumPeople();
 	string getApplyDeadline();
-	void addPerson();
+	void removePerson();
 };

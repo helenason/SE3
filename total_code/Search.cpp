@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Search.h"
+#include "Recruitment.h"
 #include "Company.h"
 using namespace std;
 

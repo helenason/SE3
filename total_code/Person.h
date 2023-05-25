@@ -3,10 +3,8 @@
 #include <string>
 #include <unordered_map>
 #include "Member.h"
-#include "Application.h"
 #include "ApplicationCollection.h"
 using namespace std;
-class ApplicationCollection;
 
 class Person : public Member {
 private:
@@ -17,8 +15,11 @@ private:
 	ApplicationCollection* ownedApplicationCollection;
 	unordered_map<string, int> applyNumByTask;
 public:
-	Person(string id, string password, string personName, string regNum);
+	Person(int memClassifier, string id, string password, string personName, string regNum);
 	string getPersonName();
 	string getRegNum();
 	virtual void addNewApplication(Application* application, string task);
+	virtual ApplicationCollection* getApplicationCollection();
+	virtual void cancelApplication(string businessNum, string task);
+	virtual unordered_map<string, int> getStatistics();
 };

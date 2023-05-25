@@ -89,6 +89,17 @@ string Recruitment::getID() {
 string Recruitment::getApplyDeadline() {
     return this->applyDeadline;
 }
-void Recruitment::addPerson() {
-    (this->numPeople)++;
+
+
+/*
+    함수 이름 : Recruitment::removePerson()
+    기능	  :
+    전달 인자 : 없음
+    반환값    : 없음
+*/
+void Recruitment::removePerson()
+{
+    if (applicantsNum > 0) {
+        applicantsNum -= 1;
+    }
 }

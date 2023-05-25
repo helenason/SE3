@@ -1,9 +1,12 @@
 #pragma once
 #include <iostream>
 #include <string>
-//#include "ApplicationCollection.h"
 using namespace std;
 
+/*
+	클래스 이름 :
+	기능	  :
+*/
 class Application {
 private:
 	string companyName;
@@ -13,14 +16,7 @@ private:
 	string applyDeadline;
 	int applyMonth;
 public:
-	Application(string name, string num, string task, int nPeople, string deadline) {
-		this->companyName = name;
-		this->businessNum = num;
-		this->task = task;
-		this->numPeople = nPeople;
-		this->applyDeadline = deadline;
-	}
-	//Application getApplication();
+	Application(string name, string num, string task, int nPeople, string deadline);
 	string getCompanyName();
 	string getBusinessNum();
 	string getTask();

@@ -1,7 +1,5 @@
 #pragma once
-#include "Company.h"
 #include "Apply.h"
-class Apply;
 
 class ApplyUI {
 private:

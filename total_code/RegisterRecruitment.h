@@ -1,11 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Member.h"
 #include "Recruitment.h"
+#include "Member.h"
 
 using namespace std;
-class Recruitment;
 
 class RegisterRecruitment {
 private:

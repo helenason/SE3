@@ -2,10 +2,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "SearchRecruitmentListUI.h"
-#include "SearchRecruitmentList.h"
-#include "Recruitment.h"
 #include "Member.h"
-#include "Company.h"
+#include "SearchRecruitmentList.h"
 
 /*
 	함수 이름: SearchRecruitmentListUI::searchRecruitments()
@@ -30,5 +28,5 @@ void SearchRecruitmentListUI::searchRecruitment(FILE* out_fp, Member* loginMembe
 	const char* deadlineChar = deadline.c_str();
 
 	fprintf(out_fp, "3.2. 등록된 채용 정보 조회\n");
-	fprintf(out_fp, "> %s %d %s\n", taskChar, nPeople, deadlineChar);
+	fprintf(out_fp, "> %s %d %s\n\n", taskChar, nPeople, deadlineChar);
 }

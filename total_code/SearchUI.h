@@ -1,10 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Company.h"
 #include "Search.h"
+
 using namespace std;
-class Search;
 
 class SearchUI {
 private:

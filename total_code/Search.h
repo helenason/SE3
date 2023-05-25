@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Recruitment.h"
 #include "Company.h"
+
 using namespace std;
+class Recruitment;
 
 class Search {
 public:

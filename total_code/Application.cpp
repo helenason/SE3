@@ -4,6 +4,13 @@
 #include "Application.h"
 using namespace std;
 
+Application::Application(string name, string num, string task, int nPeople, string deadline) {
+	this->companyName = name;
+	this->businessNum = num;
+	this->task = task;
+	this->numPeople = nPeople;
+	this->applyDeadline = deadline;
+}
 /*
 	함수 이름 : Application::getCompanyName()
 	기능	  : getter 함수
