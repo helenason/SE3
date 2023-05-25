@@ -39,14 +39,12 @@ string Member::getPassword() {
 
 /*
     함수 이름: Member::getBusinessNum()
-    기능: member의 businessNum 반환
+    기능: 
     전달 인자: 없음
-    반환값: businessNum
+    반환값:
 */
-string Member::getBusinessNum() {
-    return this->businessNum;
-}
-
+string Member::getBusinessNum() { return ""; }
 Recruitment* Member::getRecruitment() { return nullptr; }
 string Member::getCompanyName() { return ""; }
 void Member::addRecruitment(Recruitment* newRecruitment) {}
+void Member::addNewApplication(Application* application, string task) {}

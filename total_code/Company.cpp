@@ -5,13 +5,12 @@
 
 using namespace std;
 
-Company::Company(int numRecruitments, string companyName, string businessNum, string id, string password) : Member(id, password) {
-    this->numRecruitments = numRecruitments;
-    this->companyName = companyName;
-    this->businessNum = businessNum;
+Company::Company(string id, string password, string companyName, string businessNum) : Member(id, password) {
     this->id = id;
     this->password = password;
-    this->ownedRecruitment = new Recruitment("a", "a", "a", 1, "A", "a");
+    this->companyName = companyName;
+    this->businessNum = businessNum;
+    this->ownedRecruitment = new Recruitment("reName", "reNum", "reTask", 100, "reDeadline", "reId"); // test case !!
 }
 
 Recruitment* Company::getRecruitment() {
@@ -39,15 +38,9 @@ string Company::getCompanyName() {
     전달 인자: Recruitment* recruitment
     반환값: 없음
 */
-/*
-    함수 이름: Company::getRecruitmentsNum()
-    기능: 각 company가 갖고있는 recruitment의 개수 반환
-    전달 인자: 없음
-    반환값: numRecruitments
-*/
-int Company::getRecruitmentsNum() {
-    return this->numRecruitments;
-}
 void Company::addRecruitment(Recruitment* newRecruitment) {
     this->ownedRecruitment = newRecruitment;
+}
+void Company::updateApplicants(string task) {
+    this->applicantsNumByTask[task] += 1;
 }

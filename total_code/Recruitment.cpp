@@ -89,3 +89,6 @@ string Recruitment::getID() {
 string Recruitment::getApplyDeadline() {
     return this->applyDeadline;
 }
+void Recruitment::addPerson() {
+    (this->numPeople)++;
+}

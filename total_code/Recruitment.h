@@ -22,4 +22,5 @@ public:
 	string getID();
 	int getNumPeople();
 	string getApplyDeadline();
+	void addPerson();
 };

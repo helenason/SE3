@@ -3,7 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "Member.h"
+#include "Person.h"
 #include "Company.h"
+#include "ApplyUI.h"
+#include "SearchUI.h"
 #include "Recruitment.h"
 #include "RegisterRecruitment.h"
 #include "RegisterRecruitmentUI.h"
@@ -22,14 +25,19 @@ int main()
     Member* members[100];
     int membersCount = 0;
 
-    Member* loginMember = new Company(123, "a", "a", "a", "a");
-    /*
+    Member* loginMember = new Person("comID", "comPW", "asdf", "asdf"); // test case !!
+    //Member* loginMember;
+    
     Company* companies[100];
     int companiesCount = 1;
-    companies[0] = new Company(5, "asdf", "asdf", "idid", "pwpw"); // test case !!
-    */
+    companies[0] = new Company("comID", "comPW", "hankook", "3456"); // cy test case
+
+    
     RegisterRecruitmentUI* registerUI = new RegisterRecruitmentUI();
     SearchRecruitmentListUI* searchListUI = new SearchRecruitmentListUI();
+    SearchUI* searchUI = new SearchUI();
+    ApplyUI* applyUI = new ApplyUI();
+
 
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
@@ -60,6 +68,24 @@ int main()
             }
         }
             break;
+        case 4: {
+            switch (menu_level_2)
+            {
+            case 1:
+            {
+                // 4.1 채용 정보 검색
+                searchUI->enterTerms(in_fp, out_fp, companies, companiesCount);
+                break;
+            }
+            case 2:
+            {
+                // 4.2 채용 지원
+                applyUI->enterTerms(in_fp, out_fp, companies, companiesCount, loginMember);
+                break;
+            }
+            }
+        }
+              break;
 
         case 6:
         {
