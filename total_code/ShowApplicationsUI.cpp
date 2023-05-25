@@ -6,8 +6,11 @@
 
 /*
 	함수 이름 : ShowApplicationsUI::showAllApplications()
-	기능	  :
-	전달 인자 : 없음
+	기능	  : 컨트롤 클래스의 showApplications를 호출해 현재 로그인 한 회원이
+			   가지고 있는 지원 정보 리스트를 가져온다.
+			   그리고 그 리스트를 이용해 지원 세부 정보(회사 이름, 사업자 번호, 업무, 인원 수, 마감 기간)
+			   를 파일에 출력한다.
+	전달 인자 : FILE* inputFile, FILE* outputFile, Member* loginMember
 	반환값    : 없음
 */
 void ShowApplicationsUI::showAllApplications(FILE* inputFile, FILE* outputFile, Member* loginMember)
@@ -38,8 +41,9 @@ void ShowApplicationsUI::showAllApplications(FILE* inputFile, FILE* outputFile, 
 
 /*
 	함수 이름 : ShowApplicationsUI::ShowApplicationsUI()
-	기능	  :
-	전달 인자 : 없음
+	기능	  : 생성자로 ShowApplicationsUI* 타입 객체의 생성자에 자신을 인자로 전달해
+			   멤버변수인 showApplications에 할당한다.
+	전달 인자 : ShowApplications* showApplications
 	반환값    : 없음
 */
 

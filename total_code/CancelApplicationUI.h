@@ -9,7 +9,7 @@ class CancelApplication;
 
 /*
 	클래스 이름 : CancelApplicationUI
-	기능	  :
+	기능	  :  바운더리 클래스로 지원 취소 부분의 입출력을 담당한다.
 */
 class CancelApplicationUI
 {

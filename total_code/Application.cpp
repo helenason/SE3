@@ -4,6 +4,13 @@
 #include "Application.h"
 using namespace std;
 
+
+/*
+	함수 이름 : Application::Application
+	기능	  : 생성자로 멤버변수들을 초기화한다.
+	전달 인자 : string name, string num, string task, int nPeople, string deadline
+	반환값	  : 없음
+*/
 Application::Application(string name, string num, string task, int nPeople, string deadline) {
 	this->companyName = name;
 	this->businessNum = num;
