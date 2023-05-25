@@ -9,5 +9,5 @@ class SearchRecruitmentList {
 private:
 
 public:
-    Recruitment searchCompanyRecruitments(string businessNum, Recruitment* recruitment);
+    Recruitment* searchCompanyRecruitments(string businessNum, Recruitment* recruitment);
 };

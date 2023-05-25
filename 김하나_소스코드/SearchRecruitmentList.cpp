@@ -5,9 +5,9 @@
 
 using namespace std;
 
-Recruitment SearchRecruitmentList::searchCompanyRecruitments(string businessNum, Recruitment* recruitment) {
+Recruitment* SearchRecruitmentList::searchCompanyRecruitments(string businessNum, Recruitment* recruitment) {
 
 	if (businessNum == recruitment->getBusinessNum()) {
-			return recruitment->getRecruitment();
+			return &(recruitment->getRecruitment());
 	}
 }
