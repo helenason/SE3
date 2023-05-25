@@ -6,6 +6,10 @@ using namespace std;
 
 Company::Company() {}
 
+Recruitment* Company::getRecruitment() {
+    return this->ownedRecruitment;
+}
+
 string Company::getBusinessNum() {
     return this->businessNum;
 }

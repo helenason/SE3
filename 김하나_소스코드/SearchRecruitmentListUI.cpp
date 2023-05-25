@@ -14,13 +14,12 @@
 */
 void SearchRecruitmentListUI::searchRecruitment(FILE* out_fp, Member* loginMember) {
 
-    string businessNum = loginMember->getBusinessNum();
+    string loginID = loginMember->getId();
 
 	SearchRecruitmentList* searchList;
 	Recruitment* searchedRecruitment;
-	Recruitment* recruitment;
 
-	searchedRecruitment = searchList->searchCompanyRecruitments(businessNum, recruitment);
+	searchedRecruitment = searchList->searchCompanyRecruitments(loginID, loginMember);
     
 	const char* task = (searchedRecruitment->getTask()).c_str();
 	int nPeople = searchedRecruitment->getNumPeople();

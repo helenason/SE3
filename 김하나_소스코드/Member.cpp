@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Member.h"
+#include "Recruitment.h"
 
 using namespace std;
 
@@ -44,4 +45,8 @@ string Member::getPassword() {
 */
 string Member::getBusinessNum() {
 	return this->businessNum;
+}
+
+Recruitment* Member::getRecruitment() {
+
 }

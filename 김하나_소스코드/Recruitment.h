@@ -10,14 +10,15 @@ private:
 	string businessNum;
 	string task;
 	int numPeople;
+	string memberID;
 	string applyDeadline;
 
 public:
-	Recruitment(string name, string num, string task, int nPeople, string deadline);
-    Recruitment getRecruitment();
+	Recruitment(string name, string num, string task, int nPeople, string deadline, string ID);
 	string getCompanyName();
 	string getBusinessNum();
 	string getTask();
+	string getID();
 	int getNumPeople();
 	string getApplyDeadline();
 };

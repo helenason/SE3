@@ -11,12 +11,13 @@ using namespace std;
     전달 인자: string name, string num, string task, int nPeople, string deadline
     반환값: 없음
 */
-Recruitment::Recruitment(string name, string num, string task, int nPeople, string deadline) {
+Recruitment::Recruitment(string name, string num, string task, int nPeople, string deadline, string ID) {
 	this->companyName = name;
 	this->businessNum = num;
 	this->task = task;
 	this->numPeople = nPeople;
 	this->applyDeadline = deadline;
+    this->memberID = ID;
 }
 
 /*
@@ -26,7 +27,7 @@ Recruitment::Recruitment(string name, string num, string task, int nPeople, stri
     반환값: Recruitment의 instance
 */
 Recruitment Recruitment::getRecruitment() {
-    return Recruitment(this->companyName, this->businessNum, this->task, this->numPeople, this->applyDeadline);
+    return Recruitment(this->companyName, this->businessNum, this->task, this->numPeople, this->applyDeadline, this->memberID);
 }
 
 /*
@@ -67,6 +68,16 @@ string Recruitment::getTask() {
 */
 int Recruitment::getNumPeople() {
 	return this->numPeople;
+}
+
+/*
+    함수 이름: Recruitment::getNumPeople()
+    기능: Recruitment instance의 numPeople(지원 가능 인원수) 반환
+    전달 인자: 없음
+    반환값: Recruitment instance의 numPeople
+*/
+string Recruitment::getID() {
+	return this->memberID;
 }
 
 /*

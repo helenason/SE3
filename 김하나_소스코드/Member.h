@@ -17,4 +17,5 @@ public :
 	string getId();
 	string getPassword();
 	string getBusinessNum();
+	virtual Recruitment* getRecruitment();
 };

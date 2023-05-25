@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Company {
+class Company : public Member {
 private:
 	int numRecruitments;
 	string companyName;
@@ -14,6 +14,7 @@ private:
 
 public:
 	Company();
+	virtual Recruitment* getRecruitment();
 	string getBusinessNum();
 	string getCompanyName(string businessNum, Company** companies, int companiesCount);
 	void addRecruitment(Recruitment* company);
