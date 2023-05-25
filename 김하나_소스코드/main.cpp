@@ -1,7 +1,7 @@
-#pragma once
 #include <stdio.h>
 #include <string.h>
 
+#include "Member.h"
 #include "Company.h"
 #include "Recruitment.h"
 #include "RegisterRecruitment.h"
@@ -21,6 +21,7 @@ int main()
     FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
     Member* loginMember;
+    loginMember = new Member("hana", "abc");
 
     // Recruitment* recruitments[100];
     // int recruitmentsCount = 0;
