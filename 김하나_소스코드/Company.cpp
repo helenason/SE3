@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "Company.h"
-<<<<<<< HEAD
 #include "Recruitment.h"
 
 using namespace std;
@@ -13,17 +12,6 @@ Company::Company(int numRecruitments, string companyName, string businessNum, st
     this->id = id;
     this->password = password;
     this->ownedRecruitment = new Recruitment("a", "a", "a", 1, "A", "a");
-=======
-#include "Member.h"
-
-using namespace std;
-
-Company::Company(int numRecruitments, string companyName, string businessNum, Recruitment* ownedRecruitment) : Member(id, password) {
-    this->numRecruitments = numRecruitments;
-    this->companyName = companyName;
-    this->businessNum = businessNum;
-    this->ownedRecruitment = new Recruitment("a", "a", "a", 1, "a", "a");
->>>>>>> 3dfb430608b4bdb4f0b7a49eda0bba38a9b6e6a5
 }
 
 Recruitment* Company::getRecruitment() {

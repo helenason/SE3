@@ -1,8 +1,5 @@
 #pragma once
-<<<<<<< HEAD
 #define _CRT_SECURE_NO_WARNINGS
-=======
->>>>>>> 3dfb430608b4bdb4f0b7a49eda0bba38a9b6e6a5
 #include <stdio.h>
 #include <string.h>
 #include "Member.h"
@@ -15,7 +12,6 @@
 
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
-#define _CRT_SECURE_NO_WARNINGS
 
 int main()
 {
