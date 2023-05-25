@@ -6,10 +6,10 @@
 using namespace std;
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : Company::Company()
-    ±â´É	  :
-    Àü´Ş ÀÎÀÚ : ¾øÀ½
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : Company::Company()
+    ê¸°ëŠ¥	  : ìƒì„±ì ì—­í• 
+    ì „ë‹¬ ì¸ì : int memClassifier, string companyName, string businessNum, string id, string password
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 Company::Company(int memClassifier, string companyName, string businessNum, string id, string password) : Member(memClassifier, id, password) {
     this->id = id;
@@ -18,30 +18,41 @@ Company::Company(int memClassifier, string companyName, string businessNum, stri
     this->businessNum = businessNum;
 }
 
+/*
+    í•¨ìˆ˜ ì´ë¦„ : Company::getRecruitment()
+    ê¸°ëŠ¥	  : Recruitment í¬ì¸í„°ì˜ ownedRecruitment ë°˜í™˜í•¨
+    ì „ë‹¬ ì¸ì : ì—†ìŒ
+    ë°˜í™˜ê°’    : Recruitment í¬ì¸í„°ì˜ ownedRecruitment
+*/
 Recruitment* Company::getRecruitment() {
     return this->ownedRecruitment;
 }
 
+/*
+    í•¨ìˆ˜ ì´ë¦„: Company::getBusinessNum()
+    ê¸°ëŠ¥ : ì‚¬ì—…ìë²ˆí˜¸ë¥¼ ì•Œë ¤ì¤Œ
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: company instanceì˜ businessNum
+*/
 string Company::getBusinessNum() {
     return this->businessNum;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Company::getCompanyName()
-    ±â´É: Àü´Ş ÀÎÀÚÀÎ businessNum(»ç¾÷ÀÚ¹øÈ£)°ú companiesÀÇ getBusinessNum()À» ÀÌ¿ëÇÏ¿© ¹İÈ¯¹ŞÀº »ç¾÷ÀÚ¹øÈ£°¡ µ¿ÀÏÇÏ¸é, companyNameÀ» ¹İÈ¯ÇÔ
-    Àü´Ş ÀÎÀÚ: string businessNum, Company** companies, int companiesCount
-    ¹İÈ¯°ª: companyName
+    í•¨ìˆ˜ ì´ë¦„: Company::getCompanyName()
+    ê¸°ëŠ¥: companyNameì„ ë°˜í™˜í•¨
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: company instanceì˜ companyName
 */
 string Company::getCompanyName() {
     return this->companyName;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Company::addRecruitment()
-    ±â´É: Àü´Ş ÀÎÀÚÀÎ recruitment¸¦ ownedRecruitment·Î ÀúÀåÇÏ¿©, »õ·Î¿î recruitmentÀ» company¿¡ Ãß°¡ÇÔ;
-         ¶ÇÇÑ, company´ç recruitment ¼ö¸¦ ¾Ë ¼ö ÀÖµµ·Ï, Ãß°¡ÇÒ ¶§, numRecruitments¸¦ Áõ°¡½ÃÅ´
-    Àü´Ş ÀÎÀÚ: Recruitment* recruitment
-    ¹İÈ¯°ª: ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„: Company::addRecruitment()
+    ê¸°ëŠ¥: ì „ë‹¬ ì¸ìì¸ recruitmentë¥¼ ownedRecruitmentë¡œ ì €ì¥í•˜ì—¬, ìƒˆë¡œìš´ recruitmentì„ companyì— ì¶”ê°€í•¨
+    ì „ë‹¬ ì¸ì: Recruitment* recruitment
+    ë°˜í™˜ê°’: ì—†ìŒ
 */
 void Company::addRecruitment(Recruitment* newRecruitment) {
     this->ownedRecruitment = newRecruitment;
@@ -50,10 +61,10 @@ void Company::updateApplicants(string task) {
     this->applicantsNumByTask[task] += 1;
 }
 /*
-    ÇÔ¼ö ÀÌ¸§ : Company::getStatistics()
-    ±â´É	  :
-    Àü´Ş ÀÎÀÚ : ¾øÀ½
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : Company::getStatistics()
+    ê¸°ëŠ¥	  :
+    ì „ë‹¬ ì¸ì : ì—†ìŒ
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 unordered_map<string, int> Company::getStatistics()
 {
@@ -61,10 +72,10 @@ unordered_map<string, int> Company::getStatistics()
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : Company::subtractApplicantsNumByTask()
-    ±â´É	  :
-    Àü´Ş ÀÎÀÚ : ¾øÀ½
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : Company::subtractApplicantsNumByTask()
+    ê¸°ëŠ¥	  :
+    ì „ë‹¬ ì¸ì : ì—†ìŒ
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void Company::subtractApplicantsNumByTask(string task)
 {
