@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string>
 #include "SearchUI.h"
+#include "Company.h"
 #include "Search.h"
 
 /*
@@ -32,6 +33,6 @@ void SearchUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int co
 
 
 	fprintf(out_fp, "4.1. 채용 정보 검색\n");
-	fprintf(out_fp, "> %s %s %s %d %s\n", companyName, businessNumChar, taskChar, nPeople, deadlineChar);
+	fprintf(out_fp, "> %s %s %s %d %s\n\n", companyName, businessNumChar, taskChar, nPeople, deadlineChar);
 
 }

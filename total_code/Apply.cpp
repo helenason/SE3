@@ -1,17 +1,13 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Member.h"
-#include "Person.h"
-#include "Company.h"
-#include "Search.h"
-#include "SearchUI.h"
 #include "Apply.h"
-#include "ApplyUI.h"
-#include "Recruitment.h"
 #include "Application.h"
+#include "Company.h"
+#include "Member.h"
+#include "Recruitment.h"
+
 using namespace std;
-class Apply;
 /*
 	함수 이름 : Apply::apply()
 	기능	  : control 클래스로서 지원 기능
@@ -29,9 +25,7 @@ Application* Apply::apply(string businessNum, Company** companies, int companies
 			companies[i]->updateApplicants(foundRecruitment->getTask());
 		}
 	}
-	// 해당 recruitment의 인원수 + 1
-	foundRecruitment->addPerson();
-
+	
 	// recruitment 정보 가져오기
 	string companyName = foundRecruitment->getCompanyName();
 	string task = foundRecruitment->getTask();

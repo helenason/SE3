@@ -1,16 +1,21 @@
 #pragma once
 #include <iostream>
+#include <unordered_map>
 #include "Company.h"
-#include "Recruitment.h"
 
 using namespace std;
 
-Company::Company(string id, string password, string companyName, string businessNum) : Member(id, password) {
+/*
+    함수 이름 : Company::Company()
+    기능	  :
+    전달 인자 : 없음
+    반환값    : 없음
+*/
+Company::Company(int memClassifier, string companyName, string businessNum, string id, string password) : Member(memClassifier, id, password) {
     this->id = id;
     this->password = password;
     this->companyName = companyName;
     this->businessNum = businessNum;
-    this->ownedRecruitment = new Recruitment("reName", "reNum", "reTask", 100, "reDeadline", "reId"); // test case !!
 }
 
 Recruitment* Company::getRecruitment() {
@@ -43,4 +48,28 @@ void Company::addRecruitment(Recruitment* newRecruitment) {
 }
 void Company::updateApplicants(string task) {
     this->applicantsNumByTask[task] += 1;
+}
+/*
+    함수 이름 : Company::getStatistics()
+    기능	  :
+    전달 인자 : 없음
+    반환값    : 없음
+*/
+unordered_map<string, int> Company::getStatistics()
+{
+    return applicantsNumByTask;
+}
+
+/*
+    함수 이름 : Company::subtractApplicantsNumByTask()
+    기능	  :
+    전달 인자 : 없음
+    반환값    : 없음
+*/
+void Company::subtractApplicantsNumByTask(string task)
+{
+    if (applicantsNumByTask[task] > 0)
+    {
+        applicantsNumByTask[task] -= 1;
+    }
 }

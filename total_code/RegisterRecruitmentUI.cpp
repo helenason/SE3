@@ -2,10 +2,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "RegisterRecruitmentUI.h"
-#include "RegisterRecruitment.h"
-#include "Recruitment.h"
 #include "Member.h"
-#include "Company.h"
+#include "RegisterRecruitment.h"
 
 /*
     함수 이름: RegisterRecruitmentUI::inputDetails()
@@ -17,7 +15,6 @@
 void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Member* loginMember)
 {
     char newTask[32];
-    //char newNumPeople = '0';
     int newNumPeople = 0;
     char newDeadline[32];
 
@@ -26,8 +23,9 @@ void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Member* logi
     RegisterRecruitment registerRecruitment;
     Recruitment* newRecruitment;
 
+
     newRecruitment = registerRecruitment.registerNewRecruitment(newTask, newNumPeople, newDeadline, loginMember);
 
     fprintf(out_fp, "3.1. 채용 정보 등록\n");
-    fprintf(out_fp, "> %s %d %s\n", newTask, newNumPeople, newDeadline);
+    fprintf(out_fp, "> %s %d %s\n\n", newTask, newNumPeople, newDeadline);
 }

@@ -1,10 +1,12 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <string>
-#include "Apply.h"
+#include "ApplyUI.h"
 #include "Company.h"
 #include "Member.h"
-#include "ApplyUI.h"
+#include "Apply.h"
+#include "Application.h"
+
 
 /*
 	함수 이름 : ApplyUI::enterTerms()
@@ -19,7 +21,7 @@ void ApplyUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int com
 
 	Apply* apply = this->apply;
 	Application* appliedApp;
-
+	//businessNum
 	appliedApp = apply->apply(businessNum, companies, companiesCount, loginMember);
 
 	// 해당 application의 정보 가져오기
@@ -30,5 +32,5 @@ void ApplyUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int com
 	const char* taskChar = task.c_str();
 
 	fprintf(out_fp, "4.2. 채용 지원\n");
-	fprintf(out_fp, "> %s %s %s\n", companyNameChar, businessNum, taskChar);
+	fprintf(out_fp, "> %s %s %s\n\n", companyNameChar, businessNum, taskChar);
 }
