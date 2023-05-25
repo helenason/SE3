@@ -1,10 +1,16 @@
 #pragma once
 #include <iostream>
 #include "Company.h"
+#include "Member.h"
 
 using namespace std;
 
-Company::Company() {}
+Company::Company(int numRecruitments, string companyName, string businessNum, Recruitment* ownedRecruitment) : Member(id, password) {
+    this->numRecruitments = numRecruitments;
+    this->companyName = companyName;
+    this->businessNum = businessNum;
+    this->ownedRecruitment = new Recruitment("a", "a", "a", 1, "a", "a");
+}
 
 Recruitment* Company::getRecruitment() {
     return this->ownedRecruitment;

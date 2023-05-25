@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Recruitment.h"
+#include "Member.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ private:
 	Recruitment* ownedRecruitment;
 
 public:
-	Company();
+	Company(int numRecruitments, string companyName, string businessNum, Recruitment* ownedRecruitment);
 	virtual Recruitment* getRecruitment();
 	string getBusinessNum();
 	string getCompanyName(string businessNum, Company** companies, int companiesCount);

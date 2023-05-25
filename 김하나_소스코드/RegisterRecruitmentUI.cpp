@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "RegisterRecruitmentUI.h"
 #include "RegisterRecruitment.h"
@@ -16,20 +17,17 @@
 void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember)
 {
     Company* company;
-    string newTask;
+    char newTask[32];
     int newNumPeople;
-    string newDeadline;
+    char newDeadline[32];
 
     fscanf(in_fp, "%s %d %s", newTask, newNumPeople, newDeadline);
-
-    const char* Task = newTask.c_str();
-    const char* Deadline = newDeadline.c_str();
 
     RegisterRecruitment registerRecruitment;
     Recruitment* newRecruitment;
 
-    newRecruitment = registerRecruitment.registerNewRecruitment(Task, newNumPeople, Deadline, company, companies, companiesCount, loginMember);
-
+    newRecruitment = registerRecruitment.registerNewRecruitment(newTask, newNumPeople, newDeadline, company, companies, companiesCount, loginMember);
+    
     fprintf(out_fp, "3.1. 채용 정보 등록\n");
-    fprintf(out_fp, "%s %d %s\n", Task, newNumPeople, Deadline);
+    fprintf(out_fp, "%s %d %s\n", newTask, newNumPeople, newDeadline);
 }

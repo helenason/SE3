@@ -1,6 +1,6 @@
+#pragma once
 #include <stdio.h>
 #include <string.h>
-
 #include "Member.h"
 #include "Company.h"
 #include "Recruitment.h"
@@ -11,6 +11,7 @@
 
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
+#define _CRT_SECURE_NO_WARNINGS
 
 FILE* in_fp, *out_fp;
 

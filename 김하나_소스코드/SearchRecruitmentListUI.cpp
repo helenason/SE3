@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "SearchRecruitmentListUI.h"
 #include "SearchRecruitmentList.h"
@@ -16,7 +17,7 @@ void SearchRecruitmentListUI::searchRecruitment(FILE* out_fp, Member* loginMembe
 
     string loginID = loginMember->getId();
 
-	SearchRecruitmentList* searchList;
+	SearchRecruitmentList* searchList = nullptr;
 	Recruitment* searchedRecruitment;
 
 	searchedRecruitment = searchList->searchCompanyRecruitments(loginID, loginMember);

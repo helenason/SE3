@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Member {
+class Member : public Member {
 private :
 	string id;
 	string password;

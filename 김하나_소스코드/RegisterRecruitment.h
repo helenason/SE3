@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Member.h"
+#include "Company.h"
 
 using namespace std;
 

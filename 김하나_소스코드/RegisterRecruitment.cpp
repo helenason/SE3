@@ -17,9 +17,10 @@ using namespace std;
 Recruitment* RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member)
 {
     string businessNum = member->getBusinessNum();
+    string id = member->getId();
     string companyName = company->getCompanyName(businessNum, companies, companiesCount);
 
-    Recruitment* newRecruitment = new Recruitment(companyName, businessNum, task, numPeople, applyDeadline);
+    Recruitment* newRecruitment = new Recruitment(companyName, businessNum, task, numPeople, applyDeadline, id);
     company->addRecruitment(newRecruitment);
 
     return newRecruitment;
