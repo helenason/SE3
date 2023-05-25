@@ -27,7 +27,7 @@ SignoutUI::SignoutUI(Signout* signout)
     반환값    : 없음
 */
 void SignoutUI::signoutUI(FILE* inputFile, FILE* outputFile, Member* loginMember, Member** members, int* membersCount, Company** companies, int* companiesCount) {
-	fprintf(outputFile, "1.2. ȸ��Ż��\n");
+	fprintf(outputFile, "1.2. 회원탈퇴\n");
 
 	string loginMemberId = loginMember->getId();
 	const char* loginMemberIdChar = loginMemberId.c_str();

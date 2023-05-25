@@ -30,7 +30,7 @@ void LogoutUI::logoutUI(FILE* inputFile, FILE* outputFile, Member* loginMember)
 
 	const char* loginMemberIdChar = loginMemberId.c_str();
 
-	fprintf(outputFile, "2.2. �α׾ƿ�\n");
+	fprintf(outputFile, "2.2. 로그아웃\n");
 	fprintf(outputFile, "> %s\n", loginMemberIdChar);
 
 	logout->logout(loginMember);

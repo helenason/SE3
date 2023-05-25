@@ -6,10 +6,10 @@
 #include "ShowStatistics.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ShowStatisticsUI::printStatistics()
-	±â´É	  : Åë°è Á¤º¸ Ãâ·Â
-	Àü´Ş ÀÎÀÚ : FILE* inputFile, FILE* outputFile, Member* loginMember
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ShowStatisticsUI::printStatistics()
+	ê¸°ëŠ¥	  : í†µê³„ ì •ë³´ ì¶œë ¥
+	ì „ë‹¬ ì¸ì : FILE* inputFile, FILE* outputFile, Member* loginMember
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ShowStatisticsUI::printStatistics(FILE* inputFile, FILE* outputFile, Member* loginMember)
 {
@@ -17,7 +17,7 @@ void ShowStatisticsUI::printStatistics(FILE* inputFile, FILE* outputFile, Member
 	unordered_map<string, int> unorderedMap = showStatistics->printStatistics(loginMember);
 
 
-	fprintf(outputFile, "5.1. Áö¿ø Á¤º¸ Åë°è\n");
+	fprintf(outputFile, "5.1. ì§€ì› ì •ë³´ í†µê³„\n");
 	for (auto iter : unorderedMap)
 	{
 
@@ -32,11 +32,11 @@ void ShowStatisticsUI::printStatistics(FILE* inputFile, FILE* outputFile, Member
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ShowStatisticsUI::ShowStatisticsUI()
-	±â´É	  : ShowStatisticsUIÀÇ »ı¼ºÀÚ·Î ÄÁÆ®·Ñ Å¬·¡½ºÀÎ ShowStatistics Å¸ÀÔÀ» ÀÎÀÚ·Î ¹Ş¾Æ
-			   ¸â¹öº¯¼öÀÎ showStatistics¿¡ ÇÒ´çÇÑ´Ù.
-	Àü´Ş ÀÎÀÚ : ShowStatistics* showStatistics
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ShowStatisticsUI::ShowStatisticsUI()
+	ê¸°ëŠ¥	  : ShowStatisticsUIì˜ ìƒì„±ìë¡œ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì¸ ShowStatistics íƒ€ì…ì„ ì¸ìë¡œ ë°›ì•„
+			   ë©¤ë²„ë³€ìˆ˜ì¸ showStatisticsì— í• ë‹¹í•œë‹¤.
+	ì „ë‹¬ ì¸ì : ShowStatistics* showStatistics
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 ShowStatisticsUI::ShowStatisticsUI(ShowStatistics* showStatistics)

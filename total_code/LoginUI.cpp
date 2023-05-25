@@ -30,7 +30,7 @@ Member* LoginUI::loginUI(FILE* inputFile, FILE* outputFile, Member** members, in
 
 	fscanf(inputFile, "%s %s", id, password);
 
-	fprintf(outputFile, "2.1. �α���\n");
+	fprintf(outputFile, "2.1. 로그인\n");
 	fprintf(outputFile, "> %s %s\n", id, password);
 
 	fprintf(outputFile, "\n");

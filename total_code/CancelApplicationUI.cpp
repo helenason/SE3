@@ -7,11 +7,11 @@
 #include "CancelApplication.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : CancelApplicationUI::selectApplication()
-	±â´É	  : ÄÁÆ®·Ñ Å¬·¡½ºÀÇ cancelApplicationÀ» È£ÃâÇØ Áö¿ø Ãë¼ÒÇÏ·Á´Â Ã¤¿ëÀ» °¡Áø È¸»ç¸¦ ¹İÈ¯ÇÑ´Ù.
-			   ¹İÈ¯¹ŞÀº È¸»ç¿¡¼­ È¸»ç ÀÌ¸§°ú ¾÷¹«¸¦ ÃßÃâÇØ ÀÔ·Â¹ŞÀº »ç¾÷ÀÚ ¹øÈ£¿Í ÇÔ²² ÆÄÀÏ¿¡ Ãâ·ÂÇÑ´Ù.
-	Àü´Ş ÀÎÀÚ : FILE* inputFile, FILE* outputFile, Member* loginMember, Company** companies, int companiesCount
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : CancelApplicationUI::selectApplication()
+	ê¸°ëŠ¥	  : ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì˜ cancelApplicationì„ í˜¸ì¶œí•´ ì§€ì› ì·¨ì†Œí•˜ë ¤ëŠ” ì±„ìš©ì„ ê°€ì§„ íšŒì‚¬ë¥¼ ë°˜í™˜í•œë‹¤.
+			   ë°˜í™˜ë°›ì€ íšŒì‚¬ì—ì„œ íšŒì‚¬ ì´ë¦„ê³¼ ì—…ë¬´ë¥¼ ì¶”ì¶œí•´ ì…ë ¥ë°›ì€ ì‚¬ì—…ì ë²ˆí˜¸ì™€ í•¨ê»˜ íŒŒì¼ì— ì¶œë ¥í•œë‹¤.
+	ì „ë‹¬ ì¸ì : FILE* inputFile, FILE* outputFile, Member* loginMember, Company** companies, int companiesCount
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void CancelApplicationUI::selectApplication(FILE* inputFile, FILE* outputFile, Member* loginMember, Company** companies, int companiesCount)
 {
@@ -29,16 +29,16 @@ void CancelApplicationUI::selectApplication(FILE* inputFile, FILE* outputFile, M
 	const char* companyNameChar = companyName.c_str();
 	const char* taskChar = task.c_str();
 
-	fprintf(outputFile, "4.4 Áö¿ø Ãë¼Ò\n");
+	fprintf(outputFile, "4.4 ì§€ì› ì·¨ì†Œ\n");
 	fprintf(outputFile, "> %s %s %s\n\n", companyNameChar, businessNumChar, taskChar);
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : CancelApplicationUI::CancelApplicationUI()
-	±â´É	  : »ı¼ºÀÚ·Î CancelApplication Å¸ÀÔ °´Ã¼ÀÇ »ı¼ºÀÚ¿¡ ÀÚ½ÅÀ» ÀÎÀÚ·Î Àü´ŞÇØ
-			   ¸â¹öº¯¼ö cancelApplication¿¡ ÇÒ´çÇÑ´Ù.
-	Àü´Ş ÀÎÀÚ : CancelApplication* cancelApplication
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : CancelApplicationUI::CancelApplicationUI()
+	ê¸°ëŠ¥	  : ìƒì„±ìë¡œ CancelApplication íƒ€ì… ê°ì²´ì˜ ìƒì„±ìì— ìì‹ ì„ ì¸ìë¡œ ì „ë‹¬í•´
+			   ë©¤ë²„ë³€ìˆ˜ cancelApplicationì— í• ë‹¹í•œë‹¤.
+	ì „ë‹¬ ì¸ì : CancelApplication* cancelApplication
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 CancelApplicationUI::CancelApplicationUI(CancelApplication* cancelApplication)

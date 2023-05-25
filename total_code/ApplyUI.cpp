@@ -9,10 +9,10 @@
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyUI::enterTerms()
-	±â´É	  : ÀÔ·Â ¹× Ãâ·Â
-	Àü´Þ ÀÎÀÚ : FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember
-	¹ÝÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ApplyUI::enterTerms()
+	ê¸°ëŠ¥	  : ìž…ë ¥ ë° ì¶œë ¥
+	ì „ë‹¬ ì¸ìž : FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 void ApplyUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int companiesCount, Member* loginMember) {
@@ -24,13 +24,13 @@ void ApplyUI::enterTerms(FILE* in_fp, FILE* out_fp, Company** companies, int com
 	//businessNum
 	appliedApp = apply->apply(businessNum, companies, companiesCount, loginMember);
 
-	// ÇØ´ç applicationÀÇ Á¤º¸ °¡Á®¿À±â
+	// í•´ë‹¹ applicationì˜ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	string companyName = appliedApp->getCompanyName();
 	string task = appliedApp->getTask();
 
 	const char* companyNameChar = companyName.c_str();
 	const char* taskChar = task.c_str();
 
-	fprintf(out_fp, "4.2. Ã¤¿ë Áö¿ø\n");
+	fprintf(out_fp, "4.2. ì±„ìš© ì§€ì›\n");
 	fprintf(out_fp, "> %s %s %s\n\n", companyNameChar, businessNum, taskChar);
 }

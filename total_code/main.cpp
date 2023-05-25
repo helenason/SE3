@@ -27,15 +27,15 @@
 #define OUTPUT_FILE_NAME "output.txt"
 
 /*
-    �Լ� �̸� : main()
-    ���	  : ä�� ���� �ý��� ��ü�� �Ѱ��Ѵ�.
-    ���� ���� : ����
-    ��ȯ��    : int 0 
+    함수 이름 : main()
+    기능	  : 채용 정보 시스템 전체를 총괄한다.
+    전달 인자 : 없음
+    반환값    : int 0 
 */
 
 int main()
 {
-    // ���� �������? ���� �ʱ�ȭ
+    // 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占? 占쏙옙占쏙옙 占십깍옙화
     FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
     FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
@@ -48,7 +48,7 @@ int main()
     int companiesCount = 0;
 
 
-    //컨트�? ?��?��?��??? 바운?���? ?��?��?���? ?��?��.
+    //而⑦듃濡? ?겢?옒?뒪??? 諛붿슫?뜑由? ?겢?옒?뒪瑜? ?깮?꽦.
     Signin* signin = new Signin();
     SigninUI* signinUI = signin->getSigninUI();
     Signout* signout = new Signout();
@@ -74,10 +74,10 @@ int main()
 
     while (!is_program_exit)
     {
-        // �Է����Ͽ��� �޴� ���� 2���� �б�
+        // 占쌉뤄옙占쏙옙占싹울옙占쏙옙 占쌨댐옙 占쏙옙占쏙옙 2占쏙옙占쏙옙 占싻깍옙
         fscanf(in_fp, "%d %d", &menu_level_1, &menu_level_2);
 
-        // �޴� ���� �� �ش� ���� ����
+        // 占쌨댐옙 占쏙옙占쏙옙 占쏙옙 占쌔댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙
         switch (menu_level_1)
         {
         case 1:
@@ -122,14 +122,14 @@ int main()
         {
             switch (menu_level_2)
             {
-            case 1: // 3.1 ä�� ���� ���?
+            case 1: // 3.1 채占쏙옙 占쏙옙占쏙옙 占쏙옙占?
             {
 
                 registerUI->inputDetails(in_fp, out_fp, loginMember);
                 break;
             }
 
-            case 2: // 3.2 ��ϵ�? ä�� ���� ��ȸ
+            case 2: // 3.2 占쏙옙溝占? 채占쏙옙 占쏙옙占쏙옙 占쏙옙회
             {
                 searchListUI->searchRecruitment(out_fp, loginMember);
                 break;
@@ -142,23 +142,23 @@ int main()
             {
             case 1:
             {
-                // 4.1 ä�� ���� �˻�
+                // 4.1 채占쏙옙 占쏙옙占쏙옙 占싯삼옙
                 searchUI->enterTerms(in_fp, out_fp, companies, companiesCount);
                 break;
             }
             case 2:
             {
-                // 4.2 ä�� ����
+                // 4.2 채占쏙옙 占쏙옙占쏙옙
                 applyUI->enterTerms(in_fp, out_fp, companies, companiesCount, loginMember);
                 break;
             }
-            case 3: // 4.3. ���� ���� ��ȸ
+            case 3: // 4.3. 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙회
             {
                 showApplicationsUI->showAllApplications(in_fp, out_fp, loginMember);
 
                 break;
             }
-            case 4: // 4.4. ���� ���?
+            case 4: // 4.4. 占쏙옙占쏙옙 占쏙옙占?
             {
                 cancelApplicationUI->selectApplication(in_fp, out_fp, loginMember, companies, companiesCount);
                 break;
@@ -170,7 +170,7 @@ int main()
         {
             switch (menu_level_2)
             {
-            case 1: // 5.1. ���� ���� ���?
+            case 1: // 5.1. 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占?
             {
                 showStatisticsUI->printStatistics(in_fp, out_fp, loginMember);
                 break;
@@ -182,9 +182,9 @@ int main()
         {
             switch (menu_level_2)
             {
-            case 1: // 6.1. ����
+            case 1: // 6.1. 占쏙옙占쏙옙
             {
-                fprintf(out_fp, "6.1. ����\n");
+                fprintf(out_fp, "6.1. 占쏙옙占쏙옙\n");
                 is_program_exit = 1;
                 break;
             }

@@ -39,7 +39,7 @@ void SigninUI::signinUI(FILE* inputFile, FILE* outputFile, Member** members, int
 
 	signin->signin(memClassifier, name, regNumOrBusinessNum, id, password, members, membersCount, companies, companiesCount);
 
-	fprintf(outputFile, "1.1. ȸ������\n");
+	fprintf(outputFile, "1.1. 회원가입\n");
 	fprintf(outputFile, "> %d %s %s %s %s\n", memClassifier, name, regNumOrBusinessNum, id, password);
 
 	fprintf(outputFile, "\n");

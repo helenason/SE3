@@ -5,17 +5,17 @@
 #include "ShowApplications.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ShowApplicationsUI::showAllApplications()
-	±â´É	  : ÄÁÆ®·Ñ Å¬·¡½ºÀÇ showApplications¸¦ È£ÃâÇØ ÇöÀç ·Î±×ÀÎ ÇÑ È¸¿øÀÌ
-			   °¡Áö°í ÀÖ´Â Áö¿ø Á¤º¸ ¸®½ºÆ®¸¦ °¡Á®¿Â´Ù.
-			   ±×¸®°í ±× ¸®½ºÆ®¸¦ ÀÌ¿ëÇØ Áö¿ø ¼¼ºÎ Á¤º¸(È¸»ç ÀÌ¸§, »ç¾÷ÀÚ ¹øÈ£, ¾÷¹«, ÀÎ¿ø ¼ö, ¸¶°¨ ±â°£)
-			   ¸¦ ÆÄÀÏ¿¡ Ãâ·ÂÇÑ´Ù.
-	Àü´Ş ÀÎÀÚ : FILE* inputFile, FILE* outputFile, Member* loginMember
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ShowApplicationsUI::showAllApplications()
+	ê¸°ëŠ¥	  : ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì˜ showApplicationsë¥¼ í˜¸ì¶œí•´ í˜„ì¬ ë¡œê·¸ì¸ í•œ íšŒì›ì´
+			   ê°€ì§€ê³  ìˆëŠ” ì§€ì› ì •ë³´ ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+			   ê·¸ë¦¬ê³  ê·¸ ë¦¬ìŠ¤íŠ¸ë¥¼ ì´ìš©í•´ ì§€ì› ì„¸ë¶€ ì •ë³´(íšŒì‚¬ ì´ë¦„, ì‚¬ì—…ì ë²ˆí˜¸, ì—…ë¬´, ì¸ì› ìˆ˜, ë§ˆê° ê¸°ê°„)
+			   ë¥¼ íŒŒì¼ì— ì¶œë ¥í•œë‹¤.
+	ì „ë‹¬ ì¸ì : FILE* inputFile, FILE* outputFile, Member* loginMember
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void ShowApplicationsUI::showAllApplications(FILE* inputFile, FILE* outputFile, Member* loginMember)
 {
-	fprintf(outputFile, "4.3. Áö¿ø Á¤º¸ Á¶È¸\n");
+	fprintf(outputFile, "4.3. ì§€ì› ì •ë³´ ì¡°íšŒ\n");
 	ApplicationCollection* applicationCollection = this->showApplications->showApplications(loginMember);
 
 	Application** applications = applicationCollection->getApplications();
@@ -40,11 +40,11 @@ void ShowApplicationsUI::showAllApplications(FILE* inputFile, FILE* outputFile, 
 }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ShowApplicationsUI::ShowApplicationsUI()
-	±â´É	  : »ı¼ºÀÚ·Î ShowApplicationsUI* Å¸ÀÔ °´Ã¼ÀÇ »ı¼ºÀÚ¿¡ ÀÚ½ÅÀ» ÀÎÀÚ·Î Àü´ŞÇØ
-			   ¸â¹öº¯¼öÀÎ showApplications¿¡ ÇÒ´çÇÑ´Ù.
-	Àü´Ş ÀÎÀÚ : ShowApplications* showApplications
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ShowApplicationsUI::ShowApplicationsUI()
+	ê¸°ëŠ¥	  : ìƒì„±ìë¡œ ShowApplicationsUI* íƒ€ì… ê°ì²´ì˜ ìƒì„±ìì— ìì‹ ì„ ì¸ìë¡œ ì „ë‹¬í•´
+			   ë©¤ë²„ë³€ìˆ˜ì¸ showApplicationsì— í• ë‹¹í•œë‹¤.
+	ì „ë‹¬ ì¸ì : ShowApplications* showApplications
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 
 ShowApplicationsUI::ShowApplicationsUI(ShowApplications* showApplications)
