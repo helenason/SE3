@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "RegisterRecruitment.h"
@@ -7,11 +8,12 @@
 
 using namespace std;
 
-void RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* loginMember)
+Recruitment* RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member)
 {
-    string businessNum = loginMember->getBusinessNum();
+    string businessNum = member->getBusinessNum();
+    string companyName = company->getCompanyName(businessNum, companies, companiesCount);
 
-    Recruitment* newRecruitment = new Recruitment(businessNum, task, numPeople, applyDeadline);
-    
+    Recruitment* newRecruitment = new Recruitment(companyName, businessNum, task, numPeople, applyDeadline);
+
     return newRecruitment;
 }

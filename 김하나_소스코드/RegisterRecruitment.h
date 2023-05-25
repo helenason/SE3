@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "Member.h"
@@ -8,5 +9,5 @@ class RegisterRecruitment {
 private:
 
 public:
-    void registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* loginMember);
+    Recruitment* registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* member);
 };
