@@ -1,19 +1,22 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "Member.h"
 using namespace std;
 
-class Company : public Member {
+class Company : public Member 
+{
 private:
 	string companyName;
-	int companyNum;
-
+	int businessNum;
+	string id;
+	string password;
 public:
-	Company(string companyName, int companyNum, string id, string password) :Member(id, password) {
+	Company(string companyName, int businessNum, string id, string password) :Member(id, password) {
 		this->companyName = companyName;
-		this->companyNum = companyNum;
+		this->businessNum = businessNum;
 	}
 	string getCompanyName();
-	int getCompanyNum();
-	Company getCompany();
+	int getBusinessNum();
+	Company getCompany(string companyName);
 };
