@@ -6,27 +6,28 @@
 #include "SearchRecruitmentList.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§: SearchRecruitmentListUI::searchRecruitments()
-	±â´É: out_fp¿¡ È¸»ç Á÷¿øÀÌ µî·ÏÇÑ Ã¤¿ë Á¤º¸¸¦ Á¶È¸ÇÑ °á°ú ¹ÝÈ¯
-	Àü´Þ ÀÎÀÚ: File* out_fp, Member* loginMember
-	¹ÝÈ¯°ª: ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„: SearchRecruitmentListUI::searchRecruitments()
+	ê¸°ëŠ¥: out_fpì— íšŒì‚¬ ì§ì›ì´ ë“±ë¡í•œ ì±„ìš© ì •ë³´ë¥¼ ì¡°íšŒí•œ ê²°ê³¼ ë°˜í™˜
+	ì „ë‹¬ ì¸ìž: File* out_fp, Member* loginMember
+	ë°˜í™˜ê°’: ì—†ìŒ
 */
 void SearchRecruitmentListUI::searchRecruitment(FILE* out_fp, Member* loginMember) {
 
-	string loginID = loginMember->getId();
+	string loginID = loginMember->getId(); // íšŒì‚¬ ì§ì›ì˜ ID
 
 	SearchRecruitmentList* searchList = nullptr;
 	Recruitment* searchedRecruitment;
-
+	
+	// íšŒì‚¬ ì§ì›ì˜ IDë¥¼ searchCompanyRecruitments()ì˜ ì¸ìžë¡œ ë°›ì•„ ì°¾ì€ recruitmentë¥¼ ì €ìž¥
 	searchedRecruitment = searchList->searchCompanyRecruitments(loginID, loginMember);
 
-	string task = searchedRecruitment->getTask();
-	string deadline = searchedRecruitment->getApplyDeadline();
-	int nPeople = searchedRecruitment->getNumPeople();
+	string task = searchedRecruitment->getTask(); // í•´ë‹¹ recruitmentì˜ ì—…ë¬´
+	string deadline = searchedRecruitment->getApplyDeadline(); // í•´ë‹¹ recruitmentì˜ ë§ˆê°ì¼
+	int nPeople = searchedRecruitment->getNumPeople(); // í•´ë‹¹ recruitmentì˜ ì¸ì›ìˆ˜
 
 	const char* taskChar = task.c_str();
 	const char* deadlineChar = deadline.c_str();
 
-	fprintf(out_fp, "3.2. µî·ÏµÈ Ã¤¿ë Á¤º¸ Á¶È¸\n");
+	fprintf(out_fp, "3.2. ë“±ë¡ëœ ì±„ìš© ì •ë³´ ì¡°íšŒ\n");
 	fprintf(out_fp, "> %s %d %s\n\n", taskChar, nPeople, deadlineChar);
 }
