@@ -6,10 +6,10 @@
 using namespace std;
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::Recruitment()
-    ±â´É: Recruitment Constructor
-    Àü´Ş ÀÎÀÚ: string name, string num, string task, int nPeople, string deadline
-    ¹İÈ¯°ª: ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::Recruitment()
+    ê¸°ëŠ¥: Recruitment Constructor
+    ì „ë‹¬ ì¸ì: string name, string num, string task, int nPeople, string deadline, string ID
+    ë°˜í™˜ê°’: ì—†ìŒ
 */
 Recruitment::Recruitment(string name, string num, string task, int nPeople, string deadline, string ID) {
     this->companyName = name;
@@ -21,70 +21,70 @@ Recruitment::Recruitment(string name, string num, string task, int nPeople, stri
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getRecruitment()
-    ±â´É: recruitment Á¤º¸¸¦ °¡Á®¿È
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: RecruitmentÀÇ instance
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getRecruitment()
+    ê¸°ëŠ¥: recruitment ì •ë³´ë¥¼ ê°€ì ¸ì˜´
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitmentì˜ instance
 */
 Recruitment Recruitment::getRecruitment() {
     return Recruitment(this->companyName, this->businessNum, this->task, this->numPeople, this->applyDeadline, this->memberID);
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getCompanyName()
-    ±â´É: Recruitment instanceÀÇ companyName(È¸»ç ÀÌ¸§) ¹İÈ¯
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: Recruitment instanceÀÇ companyName
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getCompanyName()
+    ê¸°ëŠ¥: Recruitment instanceì˜ companyName(íšŒì‚¬ ì´ë¦„) ë°˜í™˜
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitment instanceì˜ companyName
 */
 string Recruitment::getCompanyName() {
     return this->companyName;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getBusinessNum()
-    ±â´É: Recruitment instanceÀÇ businessNum(»ç¾÷ÀÚ¹øÈ£) ¹İÈ¯
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: Recruitment instanceÀÇ businessNum
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getBusinessNum()
+    ê¸°ëŠ¥: Recruitment instanceì˜ businessNum(ì‚¬ì—…ìë²ˆí˜¸) ë°˜í™˜
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitment instanceì˜ businessNum
 */
 string Recruitment::getBusinessNum() {
     return this->businessNum;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getTask()
-    ±â´É: Recruitment instanceÀÇ task(¾÷¹«) ¹İÈ¯
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: Recruitment instanceÀÇ task
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getTask()
+    ê¸°ëŠ¥: Recruitment instanceì˜ task(ì—…ë¬´) ë°˜í™˜
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitment instanceì˜ task
 */
 string Recruitment::getTask() {
     return this->task;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getNumPeople()
-    ±â´É: Recruitment instanceÀÇ numPeople(Áö¿ø °¡´É ÀÎ¿ø¼ö) ¹İÈ¯
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: Recruitment instanceÀÇ numPeople
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getNumPeople()
+    ê¸°ëŠ¥: Recruitment instanceì˜ numPeople(ì§€ì› ê°€ëŠ¥ ì¸ì›ìˆ˜) ë°˜í™˜
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitment instanceì˜ numPeople
 */
 int Recruitment::getNumPeople() {
     return this->numPeople;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getNumPeople()
-    ±â´É: Recruitment instanceÀÇ numPeople(Áö¿ø °¡´É ÀÎ¿ø¼ö) ¹İÈ¯
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: Recruitment instanceÀÇ numPeople
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getID()
+    ê¸°ëŠ¥: Recruitment instanceì˜ id(íšŒì› ì•„ì´ë””) ë°˜í™˜
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitment instanceì˜ id
 */
 string Recruitment::getID() {
     return this->memberID;
 }
 
 /*
-    ÇÔ¼ö ÀÌ¸§: Recruitment::getApplyDeadline()
-    ±â´É: Recruitment instanceÀÇ applyDeadline(Áö¿ø ¸¶°¨ÀÏ) ¹İÈ¯
-    Àü´Ş ÀÎÀÚ: ¾øÀ½
-    ¹İÈ¯°ª: Recruitment instanceÀÇ applyDeadline
+    í•¨ìˆ˜ ì´ë¦„: Recruitment::getApplyDeadline()
+    ê¸°ëŠ¥: Recruitment instanceì˜ applyDeadline(ì§€ì› ë§ˆê°ì¼) ë°˜í™˜
+    ì „ë‹¬ ì¸ì: ì—†ìŒ
+    ë°˜í™˜ê°’: Recruitment instanceì˜ applyDeadline
 */
 string Recruitment::getApplyDeadline() {
     return this->applyDeadline;
@@ -92,10 +92,10 @@ string Recruitment::getApplyDeadline() {
 
 
 /*
-    ÇÔ¼ö ÀÌ¸§ : Recruitment::removePerson()
-    ±â´É	  :
-    Àü´Ş ÀÎÀÚ : ¾øÀ½
-    ¹İÈ¯°ª    : ¾øÀ½
+    í•¨ìˆ˜ ì´ë¦„ : Recruitment::removePerson()
+    ê¸°ëŠ¥	  :
+    ì „ë‹¬ ì¸ì : ì—†ìŒ
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 void Recruitment::removePerson()
 {
