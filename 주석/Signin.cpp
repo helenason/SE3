@@ -6,33 +6,30 @@
 #include "Company.h"
 
 using namespace std;
-
 /*
-    í•¨ìˆ˜ ì´ë¦„ : Signin::Signin()
-    ê¸°ëŠ¥	  : signinUI ë°”ìš´í„°ë¦¬ ê°ì²´ ìƒì„±
-    ì „ë‹¬ ì¸ì : ì—†ìŒ
-    ë°˜í™˜ê°’    : ì—†ìŒ
+	ÇÔ¼ö ÀÌ¸§ : Signin::Signin()
+	±â´É	  :
+	Àü´Ş ÀÎÀÚ : ¾øÀ½
+	¹İÈ¯°ª    : ¾øÀ½
 */
 Signin::Signin()
 {
 	signinUI = new SigninUI(this);
 }
-
 /*
-    í•¨ìˆ˜ ì´ë¦„ : Signin::getSigninUI()
-    ê¸°ëŠ¥	  : signinUI ë°”ìš´í„°ë¦¬ ê°ì²´ ë°˜í™˜
-    ì „ë‹¬ ì¸ì : ì—†ìŒ
-    ë°˜í™˜ê°’    : SigninUI*
+	ÇÔ¼ö ÀÌ¸§ :
+	±â´É	  :
+	Àü´Ş ÀÎÀÚ : 
+	¹İÈ¯°ª    : 
 */
 SigninUI* Signin::getSigninUI() {
 	return signinUI;
 }
-
 /*
-    í•¨ìˆ˜ ì´ë¦„ : Signin::signin()
-    ê¸°ëŠ¥	  : memClassifierì— ë”°ë¼ Person ë° Company êµ¬ë¶„í•˜ì—¬ ìƒì„± ë° ë°°ì—´ì— ì €ì¥
-    ì „ë‹¬ ì¸ì : int memClassifier, string name, string regNumOrBusinessNum, string id, string password, Member** members, int* membersCount, Company** companies, int* companiesCount
-    ë°˜í™˜ê°’    : ì—†ìŒ
+	ÇÔ¼ö ÀÌ¸§ : ShowStatistics::printStatistics()
+	±â´É	  :
+	Àü´Ş ÀÎÀÚ : ¾øÀ½
+	¹İÈ¯°ª    : ¾øÀ½
 */
 void Signin::signin(int memClassifier, string name, string regNumOrBusinessNum, string id, string password, Member** members, int* membersCount, Company** companies, int* companiesCount) {
 	Person* newPerson = 0;

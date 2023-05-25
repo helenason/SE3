@@ -5,10 +5,8 @@
 #include "Member.h"
 
 using namespace std;
-
 /*
-	클래스 이름: Company
-	기능: 회사 회원을 의미한다.
+* ȸ�� ȸ��
 */
 class Company : public Member {
 private:
