@@ -5,11 +5,11 @@
 #include "Member.h"
 #include "Company.h"
 
-void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Company** companies, Member* loginMember)
+void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Member* loginMember)
 {
-    string newTask[32];
+    string newTask;
     int newNumPeople;
-    string newDeadline[32];
+    string newDeadline;
 
     fscanf(in_fp, "%s %d %s", newTask, newNumPeople, newDeadline);
 
