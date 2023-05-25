@@ -22,11 +22,14 @@ void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Company** co
 
     fscanf(in_fp, "%s %d %s", newTask, newNumPeople, newDeadline);
 
+    const char* Task = newTask.c_str();
+    const char* Deadline = newDeadline.c_str();
+
     RegisterRecruitment registerRecruitment;
     Recruitment* newRecruitment;
 
-    newRecruitment = registerRecruitment.registerNewRecruitment(newTask, newNumPeople, newDeadline, company, companies, companiesCount, loginMember);
+    newRecruitment = registerRecruitment.registerNewRecruitment(Task, newNumPeople, Deadline, company, companies, companiesCount, loginMember);
 
     fprintf(out_fp, "3.1. 채용 정보 등록\n");
-    fprintf(out_fp, "%s %d %s\n", newTask, newNumPeople, newDeadline);
+    fprintf(out_fp, "%s %d %s\n", Task, newNumPeople, Deadline);
 }
