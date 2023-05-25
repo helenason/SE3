@@ -62,9 +62,9 @@ void Company::updateApplicants(string task) {
 }
 /*
     함수 이름 : Company::getStatistics()
-    기능	  :
+    기능	  :업무별 지원자 수를 반환한다.
     전달 인자 : 없음
-    반환값    : 없음
+    반환값    : 업무별 지원자 수
 */
 unordered_map<string, int> Company::getStatistics()
 {
@@ -73,8 +73,8 @@ unordered_map<string, int> Company::getStatistics()
 
 /*
     함수 이름 : Company::subtractApplicantsNumByTask()
-    기능	  :
-    전달 인자 : 없음
+    기능	  : 업무별 지원자 수를 담은 맵에 해당 업무의 지원자 수를 하나 감소시킨다.
+    전달 인자 : string task
     반환값    : 없음
 */
 void Company::subtractApplicantsNumByTask(string task)
