@@ -4,7 +4,6 @@
 #include "Application.h"
 using namespace std;
 
-
 /*
 	함수 이름 : Application::Application
 	기능	  : 생성자로 멤버변수들을 초기화한다.
@@ -18,6 +17,7 @@ Application::Application(string name, string num, string task, int nPeople, stri
 	this->numPeople = nPeople;
 	this->applyDeadline = deadline;
 }
+
 /*
 	함수 이름 : Application::getCompanyName()
 	기능	  : getter 함수
@@ -27,6 +27,7 @@ Application::Application(string name, string num, string task, int nPeople, stri
 string Application::getCompanyName() {
 	return this->companyName;
 }
+
 /*
 	함수 이름 : Application::getBusinessNum()
 	기능	  : getter 함수
@@ -36,6 +37,7 @@ string Application::getCompanyName() {
 string Application::getBusinessNum() {
 	return this->businessNum;
 }
+
 /*
 	함수 이름 : Application::getTask()
 	기능	  : getter 함수
@@ -45,6 +47,7 @@ string Application::getBusinessNum() {
 string Application::getTask() {
 	return this->task;
 }
+
 /*
 	함수 이름 : Application::getNumPeople()
 	기능	  : getter 함수
@@ -54,6 +57,7 @@ string Application::getTask() {
 int Application::getNumPeople() {
 	return this->numPeople;
 }
+
 /*
 	함수 이름 : Application::getApplyDeadline()
 	기능	  : getter 함수

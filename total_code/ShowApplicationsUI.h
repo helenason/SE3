@@ -8,8 +8,8 @@ using namespace std;
 class ShowApplications;
 
 /*
-	????? ??? :ShowApplicationsUI
-	???	  : Áö¿ø Á¤º¸ Á¶È¸ÀÇ ¹Ù¿î´õ¸® Å¬·¡½º·Î ÇØ´ç ºÎºÐÀÇ ÀÔÃâ·ÂÀ» ´ã´çÇÑ´Ù.
+	í´ëž˜ìŠ¤ ì´ë¦„ :ShowApplicationsUI
+	ê¸°ëŠ¥	  : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 */
 class ShowApplicationsUI
 {

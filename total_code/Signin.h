@@ -7,6 +7,10 @@
 using namespace std;
 class SigninUI;
 
+/*
+	클래스 이름: Signin
+	클래스 기능: 회원가입 부분을 담당하는 컨트롤 클래스이다.
+*/
 class Signin
 {
 private:

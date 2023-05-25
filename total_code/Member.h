@@ -7,6 +7,10 @@
 #include "ApplicationCollection.h"
 using namespace std;
 
+/*
+	클래스 이름: Member
+	클래스 기능: 회원을 의미하는 클래스로 회원 정보를 저장함
+*/
 class Member {
 private:
 	string id;

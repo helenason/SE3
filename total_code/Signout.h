@@ -8,6 +8,10 @@
 using namespace std;
 class SignoutUI;
 
+/*
+	클래스 이름: Signout
+	클래스 기능: 회원탈퇴 부분을 담당하는 컨트롤 클래스이다.
+*/
 class Signout
 {
 private:

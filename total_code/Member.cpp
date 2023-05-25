@@ -43,19 +43,48 @@ string Member::getPassword() {
 
 /*
     함수 이름: Member::getBusinessNum()
-    기능: 
+    기능: 가상 함수
     전달 인자: 없음
-    반환값:
+    반환값: 빈 문자열
 */
 string Member::getBusinessNum() { return ""; }
+
+/*
+    함수 이름: Member::getRecruitment()
+    기능: 가상 함수
+    전달 인자: 없음
+    반환값: null pointer
+*/
 Recruitment* Member::getRecruitment() { return nullptr; }
+
+/*
+    함수 이름: Member::getCompanyName()
+    기능: 가상 함수
+    전달 인자: 없음
+    반환값: 빈 문자열
+*/
 string Member::getCompanyName() { return ""; }
+
+/*
+    함수 이름: Member::addRecruitment()
+    기능: 가상 함수
+    전달 인자: Recruitment* newRecruitment
+    반환값: 없음
+*/
 void Member::addRecruitment(Recruitment* newRecruitment) {}
+
+/*
+    함수 이름:  Member::addNewApplication
+    기능: 가상 함수
+    전달 인자: Application* application, string task
+    반환값: 없음
+*/
 void Member::addNewApplication(Application* application, string task) {}
+
 /*
     함수 이름 : Member::cancelApplication()
-    기능	  :
-    전달 인자 : 없음
+    기능	  : 가상 함수
+    전달 인자 : string businessNum, string task
     반환값    : 없음
 */
 void Member::cancelApplication(string businessNum, string task)
@@ -65,9 +94,9 @@ void Member::cancelApplication(string businessNum, string task)
 
 /*
     함수 이름 : Member::listApplications()
-    기능	  :
+    기능	  : 가상 함수
     전달 인자 : 없음
-    반환값    : 없음
+    반환값    : 0
 */
 ApplicationCollection* Member::getApplicationCollection()
 {

@@ -93,7 +93,7 @@ string Recruitment::getApplyDeadline() {
 
 /*
     함수 이름 : Recruitment::removePerson()
-    기능	  :
+    기능	  : 해당 채용 공고에서 지원자 수를 하나 줄인다.
     전달 인자 : 없음
     반환값    : 없음
 */

@@ -6,6 +6,10 @@
 #include "ApplicationCollection.h"
 using namespace std;
 
+/*
+	클래스 이름: Person
+	클래스 기능: Member 클래스의 자식 클래스이며, 일반 회원을 의미한다.
+*/
 class Person : public Member {
 private:
 	string id;
