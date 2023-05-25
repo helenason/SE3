@@ -1,7 +1,7 @@
 #pragma once
 #include "Member.h"
 
-class RegisterRecruitmentUI {
+class SearchRecruitmentListUI {
 public :
-	void searchRecruitment(Member* loginMember);
+	void searchRecruitment(FILE* out_fp, Member* loginMember);
 };

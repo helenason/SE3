@@ -9,5 +9,5 @@ class RegisterRecruitment {
 private:
 
 public:
-    Recruitment* registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* member);
+    Recruitment* registerNewRecruitment(string task, int numPeople, string applyDeadline, Company* company, Company** companies, int companiesCount, Member* member);
 };

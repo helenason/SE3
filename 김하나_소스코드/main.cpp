@@ -22,7 +22,8 @@ int main()
 
     Member* loginMember;
 
-    int recruitmentsCount = 0;
+    // Recruitment* recruitments[100];
+    // int recruitmentsCount = 0;
 
     Company* companies[100];
     int companiesCount = 0;
@@ -53,7 +54,7 @@ int main()
 
                     case 2: // "3.2 등록된 채용 정보 조회" 메뉴 부분
                     {
-                        searchListUI->searchRecruitment(loginMember);
+                        searchListUI->searchRecruitment(out_fp, loginMember);
                         break;
                     }
                 }
@@ -63,7 +64,7 @@ int main()
             {
                 switch (menu_level_2)
                 {
-                case 1: // "6.1. ���ᡰ �޴� �κ�
+                case 1: // "6.1. 종료" 메뉴 부분
                 {
 
                     fprintf(out_fp, "6.1. 종료\n");

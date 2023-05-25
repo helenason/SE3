@@ -5,9 +5,9 @@
 
 using namespace std;
 
-class SearchRecruitment {
+class SearchRecruitmentList {
 private:
 
 public:
-    Recruitment* searchCompanyRecruitments(string businessNum, Company* company, Recruitment** recruitments);
+    Recruitment searchCompanyRecruitments(string businessNum, Recruitment* recruitment);
 };

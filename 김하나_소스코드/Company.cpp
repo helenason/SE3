@@ -20,8 +20,9 @@ string Company::getCompanyName(string businessNum, Company** companies, int comp
     }
 }
 
-void Company::addRecruitment(Company* company) {
-    company->numRecruitments++;
+void Company::addRecruitment(Recruitment* recruitment) {
+    ownedRecruitment = recruitment;
+    numRecruitments++;
 }
 
 int Company::getRecruitmentsNum() {

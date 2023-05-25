@@ -20,6 +20,6 @@ void RegisterRecruitmentUI::inputDetails(FILE* in_fp, FILE* out_fp, Company** co
 
     newRecruitment = registerRecruitment.registerNewRecruitment(newTask, newNumPeople, newDeadline, company, companies, companiesCount, loginMember);
 
-    fprintf(out_fp, "3.1 채용 정보 등록\n");
+    fprintf(out_fp, "3.1. 채용 정보 등록\n");
     fprintf(out_fp, "%s %d %s\n", newTask, newNumPeople, newDeadline);
 }
