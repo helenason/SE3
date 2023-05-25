@@ -9,16 +9,16 @@
 
 using namespace std;
 /*
-	함수 이름 : Apply::apply()
-	기능	  : control 클래스로서 지원 기능
-	전달 인자 : string businessNum, Company** companies, int companiesCount, Member* loginMember
-	반환값    : Application* apply
+	??? ??? : Apply::apply()
+	???	  : control ??????μ? ???? ???
+	???? ???? : string businessNum, Company** companies, int companiesCount, Member* loginMember
+	?????    : Application* apply
 */
 Application* Apply::apply(string businessNum, Company** companies, int companiesCount, Member* loginMember) {
 
 	Recruitment* foundRecruitment = nullptr;
 
-	// businessNum을 가진 company 찾기
+	// businessNum?? ???? company ???
 	for (int i = 0; i < companiesCount; i++) {
 		if (businessNum == companies[i]->getBusinessNum()) {
 			foundRecruitment = companies[i]->getRecruitment();
@@ -26,16 +26,16 @@ Application* Apply::apply(string businessNum, Company** companies, int companies
 		}
 	}
 	
-	// recruitment 정보 가져오기
+	// recruitment ???? ????????
 	string companyName = foundRecruitment->getCompanyName();
 	string task = foundRecruitment->getTask();
 	int numPeople = foundRecruitment->getNumPeople();
 	string applyDeadline = foundRecruitment->getApplyDeadline();
 
-	// recruitment 정보들로 application 클래스 생성 = 지원
+	// recruitment ??????? application ????? ???? = ????
 	Application* newApp = new Application(companyName, businessNum, task, numPeople, applyDeadline);
 
-	// 로그인된 계정의 지원 리스트에 추가
+	// ?α??ε? ?????? ???? ??????? ???
 	loginMember->addNewApplication(newApp, task);
 
 	return newApp;

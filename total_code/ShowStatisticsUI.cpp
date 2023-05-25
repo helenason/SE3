@@ -33,7 +33,8 @@ void ShowStatisticsUI::printStatistics(FILE* inputFile, FILE* outputFile, Member
 
 /*
 	함수 이름 : ShowStatisticsUI::ShowStatisticsUI()
-	기능	  :
+	기능	  : ShowStatisticsUI의 생성자로 컨트롤 클래스인 ShowStatistics 타입을 인자로 받아
+			   멤버변수인 showStatistics에 할당한다.
 	전달 인자 : ShowStatistics* showStatistics
 	반환값    : 없음
 */

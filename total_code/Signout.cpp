@@ -6,31 +6,33 @@
 #include "Company.h"
 
 using namespace std;
+
 /*
-	ÇÔ¼ö ÀÌ¸§ :
-	±â´É	  :
-	Àü´Ş ÀÎÀÚ :
-	¹İÈ¯°ª    :
+    í•¨ìˆ˜ ì´ë¦„ : Signout::Signout()
+    ê¸°ëŠ¥	  : Signout ë°”ìš´í„°ë¦¬ ê°ì²´ ì´ˆê¸°í™”
+    ì „ë‹¬ ì¸ì : ì—†ìŒ
+    ë°˜í™˜ê°’    : ì—†ìŒ
 */
 Signout::Signout()
 {
 	signoutUI = new SignoutUI(this);
 }
+
 /*
-	ÇÔ¼ö ÀÌ¸§ :
-	±â´É	  :
-	Àü´Ş ÀÎÀÚ :
-	¹İÈ¯°ª    :
+    í•¨ìˆ˜ ì´ë¦„ : Signout::getSignoutUI()
+    ê¸°ëŠ¥	  : Signout ë°”ìš´ë”ë¦¬ ê°ì²´ ë°˜í™˜
+    ì „ë‹¬ ì¸ì : ì—†ìŒ
+    ë°˜í™˜ê°’    : SignoutUI*
 */
 SignoutUI* Signout::getSignoutUI()
 {
 	return signoutUI;
 }
 /*
-	ÇÔ¼ö ÀÌ¸§ :
-	±â´É	  :
-	Àü´Ş ÀÎÀÚ :
-	¹İÈ¯°ª    :
+	ï¿½Ô¼ï¿½ ï¿½Ì¸ï¿½ :
+	ï¿½ï¿½ï¿½	  :
+	ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ :
+	ï¿½ï¿½È¯ï¿½ï¿½    :
 */
 void Signout::signout(Member* loginMember, Member** members, int* membersCount, Company** companies, int* companiesCount)
 {
