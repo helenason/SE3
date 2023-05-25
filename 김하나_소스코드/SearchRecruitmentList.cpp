@@ -4,6 +4,11 @@
 
 using namespace std;
 
-void SearchRecruitmentList::searchMemberRecruitments() {
-    
+Recruitment* SearchRecruitmentList::searchCompanyRecruitments(string businessNum, Recruitment** recruitments, int recruitmentsCount) {
+
+    for (int i = 0; i < recruitmentsCount; i++) {
+		if (businessNum == recruitments[i]->getBusinessNum()) {
+			return recruitments[i]->getRecruitment();
+		}
+	}
 }

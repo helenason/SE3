@@ -5,6 +5,6 @@ using namespace std;
 
 Company::Company() {}
 
-int Company::getBusinessNum() {
-    return this->businessNum;
+string Company::getCompanyName() {
+    return this->companyName;
 }

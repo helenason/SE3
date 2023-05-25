@@ -2,16 +2,16 @@
 #include <string>
 #include "RegisterRecruitment.h"
 #include "Recruitment.h"
+#include "Member.h"
+#include "Company.h"
 
 using namespace std;
 
-void RegisterRecruitment::registerNewRecruitment(FILE* inputFile, FILE* outputFile) {
+void RegisterRecruitment::registerNewRecruitment(string task, int numPeople, string applyDeadline, Member* loginMember)
+{
+    string businessNum = loginMember->getBusinessNum();
 
-    string newTask[32];
-    int newNumPeople;
-    string newDeadline[32];
-
-    fscanf(inputFile, "%s %d %s", newTask, newNumPeople, newDeadline);
-
-
+    Recruitment* newRecruitment = new Recruitment(businessNum, task, numPeople, applyDeadline);
+    
+    return newRecruitment;
 }
