@@ -72,9 +72,9 @@ int Recruitment::getNumPeople() {
 
 /*
     함수 이름: Recruitment::getID()
-    기능: Recruitment instance의 id(회원 아이디) 반환
+    기능: Recruitment instance의 memberID(회원 아이디) 반환
     전달 인자: 없음
-    반환값: Recruitment instance의 id
+    반환값: Recruitment instance의 memberID
 */
 string Recruitment::getID() {
     return this->memberID;
