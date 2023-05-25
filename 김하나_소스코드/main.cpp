@@ -21,7 +21,6 @@ int main()
     FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
     Member* loginMember;
-    loginMember = new Member("hana", "abc");
 
     // Recruitment* recruitments[100];
     // int recruitmentsCount = 0;
